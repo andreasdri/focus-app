@@ -35,5 +35,13 @@ $ ionic emulate ios
 
 ### Android
 
-Coming up...
+#### Windows
+Make sure you install and configure the dependencies as described in [this guide](http://ionicframework.com/docs/guide/installation.html), especially the `Windows note on Java, Ant and Android`.
 
+Install [Genymotion](https://www.genymotion.com/) if you want a faster emulator than the default one included in the Android SDK. Otherwise, replace `ionic run` with `ionic emulate` below:
+
+```bash
+$ ionic platform add android
+$ ionic build android
+$ ionic run android
+```
