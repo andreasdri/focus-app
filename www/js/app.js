@@ -3,7 +3,25 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('focus', ['ionic', 'ngCordova'])
+angular.module('focus.controllers', []);
+angular.module('focus.filters', []);
+angular.module('focus.services', []);
+angular.module('focus.directives', []);
+
+angular.module('focus', ['ionic', 'ngCordova',
+  'focus.controllers', 'focus.filters', 'focus.services',
+  'focus.directives'])
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider.state('main', {
+    url: '/',
+    templateUrl: 'templates/main.html',
+    controller: 'MainController'
+  });
+
+  $urlRouterProvider.otherwise('/');
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
