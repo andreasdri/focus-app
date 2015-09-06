@@ -29,7 +29,9 @@ angular.module('focus.controllers')
           if (media) {
             media.release();
           }
-          media = $cordovaMedia.newMedia(sound.src);
+          var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
+
+          media = $cordovaMedia.newMedia(src);
           media.play();
 
           $scope.isPlaying = true;
