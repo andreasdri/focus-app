@@ -2,7 +2,7 @@
 <style>
   .modal{
     top: 0 ;
-    bottom: 0 ; 
+    bottom: 0 ;
     left: 0 ;
     right: 0 ;
     width: 100% ;
@@ -19,16 +19,16 @@
   <ion-content padding="true" ng-controller="PlayerController">
     <div class="list list-inset">
       <div class="item item-thumbnail-left">
-      	<img src="{{sound.art}}">
-      	<h2>{{sound.title}}</h2>
+        <img src="{{sound.art}}">
+        <h2>{{sound.title}}</h2>
         <p>{{sound.description}}</p>
-    	 	<a class="button button-icon button-clear ion-ios-rewind" 
+        <a class="button button-icon button-clear ion-ios-rewind"
           ng-click="prev()"></a>
-      	<a class="button button-icon button-clear ion-ios-play" ng-click="playOrPause()" 
+        <a class="button button-icon button-clear ion-ios-play" ng-click="playOrPause()"
           ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></a>
-        <a class="button button-icon button-clear ion-ios-fastforward" 
+        <a class="button button-icon button-clear ion-ios-fastforward"
           ng-click="next()"></a>
-		  </div>
+      </div>
     </div>
   </ion-content>
 </ion-modal-view>

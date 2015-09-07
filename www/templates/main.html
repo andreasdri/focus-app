@@ -1,14 +1,14 @@
 <ion-nav-bar class="bar-positive">
   <ion-nav-buttons side="right">
-    <button class="button button-clear" 
+    <button class="button button-clear"
       side="right" ng-click="showPlayer()">Player</button>
   </ion-nav-buttons>
 </ion-nav-bar>
 <ion-nav-view name="mainContent" class="has-header has-tabs"></ion-nav-view>
 
 <ion-tabs class="tabs-positive tabs-icon-top">
-  <ion-tab title="{{item.title}}" ng-repeat="item in list" 
-    href="#/main/{{ item.title | lowercase }}" icon-on="{{item.icon.on}}" 
+  <ion-tab title="{{item.title}}" ng-repeat="item in list"
+    href="#/main/{{ item.title | lowercase }}" icon-on="{{item.icon.on}}"
     icon-off="{{item.icon.off}}">
   </ion-tab>
 </ion-tabs>
