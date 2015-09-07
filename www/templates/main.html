@@ -1,26 +1,14 @@
-<ion-view>
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="sound in sounds"
-        class="item-icon-left" ng-click="new(sound)"
-        ng-class="currentTrack == $index ? 'selected' : ''">
-        <i class="icon ion-music-note"></i>
-        <h2>{{sound.title}}</h2>
-        <p>{{sound.subtitle}}</p>
-      </ion-item>
-    </ion-list>
+<ion-nav-bar class="bar-positive">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-ios-play" 
+      side="right" ng-click="showPlayer()"></button>
+  </ion-nav-buttons>
+</ion-nav-bar>
+<ion-nav-view name="mainContent" class="has-header has-tabs"></ion-nav-view>
 
-    <div class="button-bar">
-      <button class="button button-icon icon ion-ios-rewind"
-        ng-click="prev()">
-      </button>
-      <button class="button button-icon icon ion-ios-play"
-        ng-click="playOrPause()" ng-class="isPlaying ? 'ion-ios-pause'
-        : 'ion-ios-play'">
-      </button>
-      <button class="button button-icon icon ion-ios-fastforward"
-        ng-click="next()">
-      </button>
-    </div>
-  </ion-content>
-</ion-view>
+<ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="{{item.title}}" ng-repeat="item in list" 
+    href="#/main/{{ item.title | lowercase }}" icon-on="{{item.icon.on}}" 
+    icon-off="{{item.icon.off}}">
+  </ion-tab>
+</ion-tabs>

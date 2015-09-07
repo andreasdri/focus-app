@@ -1,53 +1,47 @@
-
-
 angular.module('focus.controllers')
-  .controller('MainController', function($scope, $cordovaMedia,
-    $ionicLoading, $ionicPlatform, AudioLibrary) {
-
-    var media;
-
-    $scope.isPlaying = false;
-    $scope.sounds = AudioLibrary.getBasic();
-    $scope.currentTrack = 0;
-
-    $ionicPlatform.ready(function() {
-
-      if (ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
-
-        $scope.playOrPause = function() {
-          if(media && $scope.isPlaying) {
-            $scope.isPlaying = false;
-            media.pause();
-          }
-          else if (media && !$scope.isPlaying) {
-            $scope.isPlaying = true;
-            media.play();
-          }
-
+  .controller('MainController', function($scope, $ionicModal) {
+    $scope.list = [
+      {
+        title: 'Home',
+        icon: {
+          on: 'ion-ios-home',
+          off: 'ion-ios-home-outline'
         }
-        $scope.new = function(sound) {
-          if (media) {
-            media.release();
-          }
-          var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
-
-          media = $cordovaMedia.newMedia(src);
-          media.play();
-
-          $scope.isPlaying = true;
-          $scope.currentTrack = sound.trackNumber - 1;
-
+      },
+      {
+        title: 'Chapters',
+        icon: {
+          on: 'ion-ios-list',
+          off: 'ion-ios-list-outline'
         }
-
-        $scope.next = function() {
-          $scope.new($scope.sounds[$scope.currentTrack + 1]);
+      },
+      {
+        title: 'Settings',
+        icon: 
+        {
+          on: 'ion-ios-gear',
+          off: 'ion-ios-gear-outline'
         }
-
-        $scope.prev = function() {
-          $scope.new($scope.sounds[$scope.currentTrack - 1]);
+      },
+      {
+        title: 'About',
+        icon: {
+          on: 'ion-ios-information',
+          off: 'ion-ios-information-outline'
         }
       }
+      ];
 
+    $ionicModal.fromTemplateUrl('templates/player.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
     });
-
+    $scope.showPlayer = function() {
+      $scope.modal.show();
+    };
+    $scope.hidePlayer = function() {
+      $scope.modal.hide();
+    };
   });

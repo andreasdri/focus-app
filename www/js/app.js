@@ -14,13 +14,52 @@ angular.module('focus', ['ionic', 'ngCordova',
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $stateProvider.state('main', {
-    url: '/',
-    templateUrl: 'templates/main.html',
-    controller: 'MainController'
-  });
+  $stateProvider
+    .state('main', {
+      url : '/main',
+      templateUrl : 'templates/main.html',
+      abstract : true,
+      controller: 'MainController'
+    })
 
-  $urlRouterProvider.otherwise('/');
+    .state('main.home', {
+      url : '/home',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/home.html',
+        }
+      }
+    })
+
+    .state('main.chapters', {
+      url : '/chapters',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/chapters.html',
+          controller: 'ChaptersController'
+        }
+      }
+    })
+
+    .state('main.settings', {
+      url : '/settings',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/settings.html',
+        }
+      }
+    })
+
+    .state('main.about', {
+      url : '/about',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/about.html',
+        }
+      }
+    })
+
+    $urlRouterProvider.otherwise('/main/home');
 })
 
 .run(function($ionicPlatform) {
