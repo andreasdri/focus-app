@@ -62,7 +62,7 @@ angular.module('focus', ['ionic', 'ngCordova',
     $urlRouterProvider.otherwise('/main/home');
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -72,5 +72,6 @@ angular.module('focus', ['ionic', 'ngCordova',
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    $rootScope.platform = ionic.Platform;
   });
 })

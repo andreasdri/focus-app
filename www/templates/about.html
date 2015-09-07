@@ -8,10 +8,9 @@
     </div>
 
   </ion-content>
-  <ion-footer-bar class="bar-stable">
-    <div>
-      <p>&copy; 2015 iMaxFocus</p>
-    </div>
+  <ion-footer-bar class="bar-stable"
+    ng-class="{ 'bar-subfooter': platform.isIOS() }">
+    <h2 class="title">&copy; 2015 iMaxFocus</h2>
   </ion-footer-bar>
 
 </ion-view>
