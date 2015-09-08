@@ -1,0 +1,11 @@
+<ion-view view-title="Chapters">
+  <ion-content padding="true" class="tabs-content has-header">
+    <ion-list>
+      <ion-item ng-repeat="sound in sounds"
+        ng-click="showPlayer();setSound({{sound.trackNumber}})">
+        {{sound.title}}
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

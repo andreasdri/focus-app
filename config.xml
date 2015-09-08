@@ -19,6 +19,9 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <feature name="Media">
+    <param name="ios-package" value="CDVSound"/>
+  </feature>
   <platform name="ios">
     <icon src="resources/ios/icon/icon.png" width="57" height="57"/>
     <icon src="resources/ios/icon/icon@2x.png" width="114" height="114"/>
@@ -66,5 +69,6 @@
     <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+    <preference name="android-installLocation" value="preferExternal" />
   </platform>
 </widget>

@@ -21,3 +21,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.selected {
+  background-color: #d3d3d3;
+}
+
+.platform-android {
+  .tabs-content {
+    @extend .has-tabs-top;
+  }
+}
+
+.platform-ios {
+  .tabs-content {
+    @extend .has-tabs;
+  }
+}
