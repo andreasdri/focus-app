@@ -27,34 +27,34 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/home.html',
-        }
-      }
-    })
-
-    .state('main.chapters', {
-      url : '/chapters',
-      views: {
-        'mainContent': {
-          templateUrl: 'templates/chapters.html',
           controller: 'ChaptersController'
         }
       }
     })
 
-    .state('main.settings', {
-      url : '/settings',
+    .state('main.motivation', {
+      url : '/motivation',
       views: {
         'mainContent': {
-          templateUrl: 'templates/settings.html',
+          templateUrl: 'templates/motivation.html',
         }
       }
     })
 
-    .state('main.about', {
-      url : '/about',
+    .state('main.purchase', {
+      url : '/purchase',
       views: {
         'mainContent': {
-          templateUrl: 'templates/about.html',
+          templateUrl: 'templates/purchase.html',
+        }
+      }
+    })
+
+    .state('main.options', {
+      url : '/options',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/options.html',
         }
       }
     })
