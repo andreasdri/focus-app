@@ -1,5 +1,5 @@
 angular.module('focus.controllers')
-  .controller('PlayerController', function($scope, AudioLibrary, $cordovaMedia) {
+  .controller('PlayerController', function($scope, AudioLibrary, $cordovaMedia2) {
   	var media;
 
     $scope.isPlaying = false;
@@ -21,11 +21,24 @@ angular.module('focus.controllers')
       }
       var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
 
-      media = $cordovaMedia.newMedia(src);
-      media.play();
+      media = $cordovaMedia2.newMedia(src);
 
       $scope.isPlaying = true;
       $scope.currentTrack = sound.trackNumber - 1;
+
+      media.play().then(function() {
+        // success
+        console.log('finished playback');
+        }, null, function(data) {
+          console.log('track progress: ' + data.position);
+
+          if (data.status) {
+            console.log('track status change: ' + data.status);
+          }
+          if (data.duration) {
+            console.log('track duration: ' + data.duration);
+         }
+      });
     }
 
     $scope.playOrPause = function() {
