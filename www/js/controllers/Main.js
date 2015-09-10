@@ -4,32 +4,34 @@ angular.module('focus.controllers')
       {
         title: 'Home',
         icon: {
-          on: 'ion-ios-home',
-          off: 'ion-ios-home-outline'
+          on: 'ion-music-note',
+          off: 'ion-music-note'
         }
       },
       {
-        title: 'Chapters',
+        title: 'Motivation',
         icon: {
-          on: 'ion-ios-list',
-          off: 'ion-ios-list-outline'
+          on: 'ion-ios-body',
+          off: 'ion-ios-body-outline'
         }
       },
       {
-        title: 'Settings',
-        icon: 
+        title: 'Purchase',
+        icon:
         {
-          on: 'ion-ios-gear',
-          off: 'ion-ios-gear-outline'
+          on: 'ion-ios-cart',
+          off: 'ion-ios-cart-outline'
         }
       },
       {
-        title: 'About',
-        icon: {
-          on: 'ion-ios-information',
-          off: 'ion-ios-information-outline'
-        }
-      }
+          title: 'Options',
+          icon:
+          {
+            on: 'ion-ios-gear',
+            off: 'ion-ios-gear-outline'
+          }
+        },
+
       ];
 
     $ionicModal.fromTemplateUrl('templates/player.html', {
