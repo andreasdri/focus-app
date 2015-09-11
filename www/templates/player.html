@@ -31,6 +31,11 @@
            ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></a>
         <a class="button button-icon button-clear ion-ios-fastforward"
            ng-click="next()"></a>
+        <div class="range">
+          <audio-progress></audio-progress>
+          <audio-progress-bar></audio-progress-bar>
+          <audio-duration></audio-duration>
+        </div>
       </div>
     </div>
   </ion-content>

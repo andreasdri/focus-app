@@ -1,4 +1,4 @@
-angular.module('focus.services', [])
+angular.module('focus.services')
 .factory('AudioLibrary', function($cordovaMedia2) {
     var basic = [
       {
@@ -87,6 +87,8 @@ angular.module('focus.services', [])
     var media;
     var isPlaying = false;
     var currentTrack = sound.trackNumber - 1;
+    var duration = 0;
+    var progress = 0;
 
     return {
       setSound: function(trackNumber) {
@@ -100,6 +102,14 @@ angular.module('focus.services', [])
 
       getAllSounds: function() {
         return sounds;
+      },
+
+      getDuration: function() {
+        return duration;
+      },
+
+      getProgress: function() {
+        return progress;
       },
 
       new: function(sound) {
@@ -118,12 +128,14 @@ angular.module('focus.services', [])
           console.log('finished playback');
           }, null, function(data) {
             console.log('track progress: ' + data.position);
+            progress = data.position;
 
             if (data.status) {
               console.log('track status change: ' + data.status);
             }
             if (data.duration) {
               console.log('track duration: ' + data.duration);
+              duration = data.duration;
            }
         })
       },
@@ -158,6 +170,19 @@ angular.module('focus.services', [])
         else {
           this.sound = sounds[currentTrack - 1];
           this.new(sounds[currentTrack - 1]);
+        }
+      },
+
+      seekTo: function(pos) {
+        if (!media) return;
+        media.seekTo(pos * 1000);
+      },
+
+      destroy: function() {
+        if (angular.isDefined(media)) {
+          media.release();
+          media = undefined;
+          currentTrack = undefined;
         }
       }
 
