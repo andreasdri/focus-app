@@ -21,6 +21,35 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+td {
+  text-align: center;
+}
+
+.motivationTable {
+  width:95%; //TODO: Denne skal sørge for at tabellen ikke går utafor skjermen. Fungerer ikke nå.
+}
+
+.motivationHeading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.motivationImg {
+  border-radius: 20%;
+  width: 150px;
+  height: 150px;
+}
+
+.motivationText {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.motivationSubText {
+  font-style: italic;
+}
+
 .selected {
   background-color: #d3d3d3;
 }
