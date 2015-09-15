@@ -1,62 +1,62 @@
 angular.module('focus.controllers')
-  .controller('PlayerController', function($scope, AudioLibrary, $interval) {
+  .controller('PlayerController', function($scope, AudioLibrary, AudioPlayer) {
   	var media;
 
-    $scope.isPlaying = AudioLibrary.isPlaying;
+    $scope.isPlaying = AudioPlayer.isPlaying;
     $scope.sounds = AudioLibrary.getAllSounds();
-    $scope.sound = AudioLibrary.getSound();
+    $scope.sound = AudioPlayer.getSound();
     $scope.currentTrack = $scope.sound.trackNumber - 1;
     $scope.duration = 0;
     $scope.progress = 0;
 
     // Make sure player is updated whenever a new sound is chosen
-    $scope.$watch(function() { return AudioLibrary.sound }, function(newVal, oldVal) {
+    $scope.$watch(function() { return AudioPlayer.sound }, function(newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
-        $scope.sound = AudioLibrary.sound;
+        $scope.sound = AudioPlayer.sound;
       }
     })
 
-    $scope.$watch(function() { return AudioLibrary.isPlaying }, function(newVal, oldVal) {
+    $scope.$watch(function() { return AudioPlayer.isPlaying }, function(newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
-        $scope.isPlaying = AudioLibrary.isPlaying;
+        $scope.isPlaying = AudioPlayer.isPlaying;
       }
     })
 
-    $scope.$watch(function() { return AudioLibrary.getDuration() }, function(newVal, oldVal) {
+    $scope.$watch(function() { return AudioPlayer.getDuration() }, function(newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
-        $scope.duration = AudioLibrary.getDuration();
+        $scope.duration = AudioPlayer.getDuration();
       }
     })
 
-    $scope.$watch(function() { return AudioLibrary.getProgress() }, function(newVal, oldVal) {
+    $scope.$watch(function() { return AudioPlayer.getProgress() }, function(newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
-        $scope.progress = AudioLibrary.getProgress();
+        $scope.progress = AudioPlayer.getProgress();
       }
     })
 
     $scope.playOrPause = function() {
-      AudioLibrary.playOrPause();
+      AudioPlayer.playOrPause();
     }
 
     $scope.next = function() {
-      AudioLibrary.next();
+      AudioPlayer.next();
     }
 
     $scope.prev = function() {
-      AudioLibrary.prev();
+      AudioPlayer.prev();
     }
 
     $scope.seekTo = function(pos) {
-      AudioLibrary.seekTo(pos);
+      AudioPlayer.seekTo(pos);
     }
 
     $scope.sliderRelease = function() {
       var pos = $scope.progress;
-      AudioLibrary.seekTo(pos);
+      AudioPlayer.seekTo(pos);
     };
 
     $scope.$on('destroy', function() {
-      AudioLibrary.destroy();
+      AudioPlayer.destroy();
     })
 
   });
