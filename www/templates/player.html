@@ -18,7 +18,7 @@
     </div>
   </ion-header-bar>
   <ion-content padding="true" ng-controller="PlayerController">
-    <div class="list list-inset">
+    <div class="list">
       <div class="item item-thumbnail-left">
         <img src="{{sound.art}}">
 
@@ -31,6 +31,13 @@
            ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></a>
         <a class="button button-icon button-clear ion-ios-fastforward"
            ng-click="next()"></a>
+      </div>
+      <div class="item">
+        <div class="range range-positive">
+          <audio-progress></audio-progress>
+          <audio-progress-bar></audio-progress-bar>
+          <audio-duration></audio-duration>
+        </div>
       </div>
     </div>
   </ion-content>

@@ -1,4 +1,4 @@
-angular.module('focus.services', [])
+angular.module('focus.services')
 .factory('AudioLibrary', function() {
     var basic = [
       {
@@ -83,17 +83,13 @@ angular.module('focus.services', [])
     ];
 
     var sounds = basic; // TODO: Make switching between 'basic' and 'olympic' versions possible
-    var sound = sounds[0];
 
     return {
-      setSound: function(trackNumber) {
-        this.sound = sounds[trackNumber-1];
-      },
-      getSound: function() {
-        return sound;
-      },
+
       getAllSounds: function() {
         return sounds;
       }
-    };
+
+    };  
+    
   });
