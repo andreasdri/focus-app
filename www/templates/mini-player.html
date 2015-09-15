@@ -1,4 +1,16 @@
-<ion-footer-bar class="bar-stable"
-  ng-class="{ 'bar-subfooter': platform.isIOS() }">
-  <h2 class="title">Music player</h2>
-</ion-footer-bar>
+<div class="bar bar-positive"
+  ng-class="{ 'bar-subfooter': platform.isIOS() }"
+  ng-click="showPlayer()">
+
+  <button class="button button-miniplayer button-small button-icon icon"
+    ng-click="playOrPause(); $event.stopPropagation();"
+    ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'">
+  </button>
+
+  <div class="title miniplayer-text">{{sound.title}}</div>
+  <div class="buttons miniplayer-progress">
+      <audio-progress></audio-progress>
+      /
+      <audio-duration></audio-duration>
+  </div>
+</div>

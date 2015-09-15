@@ -72,3 +72,14 @@ td {
     @extend .has-tabs;
   }
 }
+
+/* MiniPlayer specifics */
+.miniplayer-text {
+  font-size: 14px!important;
+}
+
+.buttons{
+  @extend .mini-player-text;
+  top: 12px!important;
+
+}
