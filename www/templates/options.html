@@ -1,38 +1,53 @@
 <ion-view view-title="Options">
   <ion-content padding="true" class="tabs-content has-header">
-    <ul class="list">
-      <li class="item item-toggle">
-        ¿Dónde está la biblioteca?
-        <label class="toggle toggle-positive">
-          <input type="checkbox">
+    <img id="iMaxLogo" src="img/iMaxLogo.png">
 
-          <div class="track">
-            <div class="handle"></div>
+    <div class="optionsList">
+      <div class="item item-divider">
+        <h3>Language</h3>
+      </div>
+      <label class="item item-radio">
+        <input type="radio" name="group" checked>
+
+        <div class="item-content">
+          English
+        </div>
+
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+
+      <div class="list">
+
+        <label class="item item-radio">
+          <input type="radio" name="group">
+
+          <div class="item-content">
+            Norwegian
           </div>
+          <i class="radio-icon ion-checkmark"></i>
         </label>
-      </li>
+      </div>
 
-      <li class="item item-toggle">
-        Me llamo T-Bone La araña discoteca.
-        <label class="toggle toggle-positive">
-          <input type="checkbox">
-
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </li>
-    </ul>
-
-    <div class="card">
-      <div class="item item-text-wrap">
-        Bacon ipsum dolor amet ground round landjaeger fatback ham pork pancetta doner ribeye chuck shoulder. Shank
-        pancetta prosciutto turkey short loin, strip steak pork alcatra beef hamburger capicola swine venison turducken.
-        Andouille cupim turducken boudin prosciutto. Short ribs swine kielbasa tenderloin. Ham hock cupim porchetta pork
-        belly. Pork belly ham hock pancetta alcatra pork brisket rump tail shankle corned beef.
-        Version 0.0.2
+      <div class="card">
+        <div class="item item-text-wrap">
+          Bacon ipsum dolor amet ground round landjaeger fatback ham pork pancetta doner ribeye chuck shoulder. Shank
+          pancetta prosciutto turkey short loin, strip steak pork alcatra beef hamburger capicola swine venison
+          turducken.
+          Andouille cupim turducken boudin prosciutto. Short ribs swine kielbasa tenderloin. Ham hock cupim porchetta
+          pork
+          belly. Pork belly ham hock pancetta alcatra pork brisket rump tail shankle corned beef.
+          Version 0.1.1
+        </div>
       </div>
     </div>
+
+    <h1>Collaborators:</h1>
+    <img id="olympiatoppenLogo" src="img/olympiatoppen_hovedlogo-01.png">
+
+    <div class="collaboratorPhotos" ng-repeat="photos in collaborators">
+      <img src="{{photos.img}}">
+    </div>
+
 
   </ion-content>
   <ion-footer-bar class="bar-stable"

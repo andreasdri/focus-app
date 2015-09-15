@@ -31,8 +31,8 @@ angular.module('focus.services')
         img: "img/athletes/tutta1.jpg",
         subtext: "Golfer",
         quote: "iMax:Focus er kritisk god prioritering og å ta de rette valg underveis, for så å ta ut dette i konkurransene."
-      }, 
-      { 
+      },
+      {
         name: "Fredrik Meek",
         img: "img/athletes/fredrik_m_150x150.jpg",
         subtext: "World Skills/Billakkering",
@@ -46,7 +46,7 @@ angular.module('focus.services')
       },
       {
         name: "Marit Breivik",
-        img: "/img/athletes/MaritBreivik_NIFS_crop_blackwhite_150x150.jpg",
+        img: "/img/athletes/MaritBreivik_150x150.jpg",
         subtext: "Hovedcoach Lagspillidretter / Landslagstrener 1994-2009, med 13 mesterskapsmedaljer (EM, VM, OL)",
         quote: "Topp prestasjon handler om å være i 'nuet'! Til stede, på trening og i konkurranse, her og nå! Nøkkelen til dette? Oppmerksomhetsprogrammene i iMax:Focus gir deg god veiledning i å øke tilstedeværelsen din både i hverdagen og på trening!"
       },

@@ -56,6 +56,7 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/options.html',
+          controller: 'CollaboratorController'
         }
       }
     })
