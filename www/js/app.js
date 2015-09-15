@@ -37,6 +37,7 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/motivation.html',
+          controller: 'MotivationController'
         }
       }
     })
