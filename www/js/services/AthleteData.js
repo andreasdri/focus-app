@@ -1,4 +1,4 @@
-angular.module('focus.services', [])
+angular.module('focus.services')
 .factory('AthleteData', function() {
     var athletes = [
       {
