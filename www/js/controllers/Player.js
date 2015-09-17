@@ -59,4 +59,8 @@ angular.module('focus.controllers')
       AudioPlayer.destroy();
     })
 
+    $scope.stop = function(){
+      AudioPlayer.stop()
+    }
+
   });

@@ -28,6 +28,7 @@ angular.module('focus.services')
       },
 
       new: function(sound) {
+        console.log("new media")
         if (media) {
           media.release();
         }
@@ -38,21 +39,8 @@ angular.module('focus.services')
         this.isPlaying = true;
         currentTrack = sound.trackNumber - 1;
 
-        media.play().then(function() {
-          // success
-          console.log('finished playback');
-          }, null, function(data) {
-            console.log('track progress: ' + data.position);
-            progress = data.position;
+        this.playMedia()
 
-            if (data.status) {
-              console.log('track status change: ' + data.status);
-            }
-            if (data.duration) {
-              console.log('track duration: ' + data.duration);
-              duration = data.duration;
-           }
-        })
       },
 
       playOrPause: function() {
@@ -62,7 +50,7 @@ angular.module('focus.services')
         }
         else if (media && !this.isPlaying) {
           this.isPlaying = true;
-          media.play();
+          this.playMedia()
         }
       },
 
@@ -75,6 +63,7 @@ angular.module('focus.services')
           this.sound = sounds[currentTrack + 1];
           this.new(sounds[currentTrack + 1]);
         }
+
       },
 
       prev: function() {
@@ -91,6 +80,33 @@ angular.module('focus.services')
       seekTo: function(pos) {
         if (!media) return;
         media.seekTo(pos * 1000);
+      },
+
+      playMedia: function() {
+
+        media.play().then(function() {
+          // success
+          console.log('finished playback');
+        }, null, function(data) {
+
+          console.log('track progress: ' + data.position);
+          progress = data.position;
+
+          if (data.status) {
+            console.log('track status change: ' + data.status);
+          }
+          if (data.duration) {
+            console.log('track duration: ' + data.duration);
+            duration = data.duration;
+          }
+        })
+      },
+
+      stop: function(){
+        if (!media) return;
+
+        if (this.isPlaying) this.isPlaying = false
+        media.stop()
       },
 
       destroy: function() {
