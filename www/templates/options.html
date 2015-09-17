@@ -4,17 +4,18 @@
 
     <div class="optionsList">
       <div class="item item-divider">
-        <h3>Language</h3>
+        <h3>Språk</h3>
       </div>
       <label class="item item-radio">
         <input type="radio" name="group" checked>
 
         <div class="item-content">
-          English
+          Norsk
         </div>
 
         <i class="radio-icon ion-checkmark"></i>
       </label>
+
 
       <div class="list">
 
@@ -22,30 +23,50 @@
           <input type="radio" name="group">
 
           <div class="item-content">
-            Norwegian
+            English
           </div>
           <i class="radio-icon ion-checkmark"></i>
         </label>
       </div>
 
-      <div class="card">
+      <div class="item item-divider">
+        <h3>Om oss</h3>
+      </div>
+
+      <div class="list">
         <div class="item item-text-wrap">
-          Bacon ipsum dolor amet ground round landjaeger fatback ham pork pancetta doner ribeye chuck shoulder. Shank
-          pancetta prosciutto turkey short loin, strip steak pork alcatra beef hamburger capicola swine venison
-          turducken.
-          Andouille cupim turducken boudin prosciutto. Short ribs swine kielbasa tenderloin. Ham hock cupim porchetta
-          pork
-          belly. Pork belly ham hock pancetta alcatra pork brisket rump tail shankle corned beef.
+          iMax:Focus er et konsept som er bygget opp av sterke aktører innenfor idrett og musikk, idrettspsykologer ved
+          Olympiatoppen og musikere hos Universal Music Group.
+          <br>
+          <br>
+          Hvordan kan det ha seg at noen idrettsutøvere overgår
+          både egne og andres forventninger når presset er som verst, mens andre er favoritter som aldri lykkes i de
+          viktige konkurransene?
+
+          Årelang forskning viser at noe av svaret på spørsmålet ligger i det å kunne fokusere på arbeidsoppgaver og
+          stenge resten ute.
+          <br>
+          <br>
+          iMax:Focus består av ulike mentale trenings- og avspenningsprogram. Disse programmene, i kombinasjon med
+          fredfull musikkavspenning, er en utmerket måte å øke din mentale styrke på.
+          <br>
+          <br>
           Version 0.1.1
         </div>
       </div>
-    </div>
 
-    <h1>Collaborators:</h1>
-    <img id="olympiatoppenLogo" src="img/olympiatoppen_hovedlogo-01.png">
 
-    <div class="collaboratorPhotos" ng-repeat="photos in collaborators">
-      <img src="{{photos.img}}">
+      <div class="list">
+        <div class="item item-divider">
+          <h3>Samarbeidspartnere</h3>
+        </div>
+        <img id="olympiatoppenLogo" src="img/olympiatoppen_hovedlogo-01.png">
+
+        <div class="collaboratorPhoto" ng-repeat="photos in collaborators">
+          <img src="{{photos.img}}">
+        </div>
+      </div>
+
     </div>
 
 
