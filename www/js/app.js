@@ -56,10 +56,21 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/options.html',
-          controller: 'CollaboratorController'
+          controller: 'OptionsController'
         }
       }
     })
+
+    .state('main.about', {
+      url : '/about',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/about.html',
+        }
+      }
+    })
+
+
 
     $urlRouterProvider.otherwise('/main/home');
 })

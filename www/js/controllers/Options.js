@@ -1,5 +1,5 @@
 angular.module('focus.controllers')
-  .controller('CollaboratorController', function ($scope) {
+  .controller('OptionsController', function($scope) {
     $scope.collaborators = [
       {
         img: "img/collaborators/universal.jpg"
