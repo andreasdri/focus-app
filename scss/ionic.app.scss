@@ -15,23 +15,20 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+@import "fonts";
+
+$font-family-sans-serif: "Raleway", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 $positive: #3c51a3 !default;
 
-$base-background-color:           #eaeaea !default;
+$base-background-color: #eaeaea !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-td {
-  text-align: center;
-}
-
-.motivationTable {
-  width:95%; //TODO: Denne skal sørge for at tabellen ikke går utafor skjermen. Fungerer ikke nå.
-}
 
 .motivationHeading {
   text-align: center;
