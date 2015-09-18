@@ -1,4 +1,10 @@
 <ion-view view-title="Purchase" hide-back-button="true">
   <ion-content padding="true" class="tabs-content has-header">
+    <button class="button button-full button-stable" ng-click="downloadFile()">
+      Download audio files to device
+    </button>
+    <div ng-repeat="img in images">
+      <img ng-src="{{img}}">
+    </div>
   </ion-content>
 </ion-view>

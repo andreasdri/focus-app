@@ -47,6 +47,7 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/purchase.html',
+          controller: 'DownloadController'
         }
       }
     })
