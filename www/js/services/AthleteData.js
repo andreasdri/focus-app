@@ -3,7 +3,7 @@ angular.module('focus.services')
     var athletes = [
       {
         name: "- Helene Olafsen",
-        img: "img/athletes/heleneO_150x150.jpg",
+        img: "img/athletes/HeleneOlafsen.jpeg",
         subtext: "Snøbrettkjører",
         quote: "Å være tilstede mentalt er helt avgjørende for å kunne forbedre de små tingene som gir deg motivasjon, som gir deg glede, som gjør deg bedre – som gjør deg best"
       },
