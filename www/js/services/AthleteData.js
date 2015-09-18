@@ -22,13 +22,13 @@ angular.module('focus.services')
 
       {
         name: "- Mette Solli",
-        img: "img/athletes/mette_solli.jpg",
+        img: "img/athletes/MetteSolli.jpg",
         subtext: "Kickbokser",
         quote: "Tilstedeværelse i det du gjør er mer enn bare å være fokusert og konsentrert. Det handler om å være tilstede i kroppen og sinnet, få kontroll på pusten. Det handler om å kjenne etter å være våken i seg selv for å prestere bedre, håndtere ytre og indre stress, og for å kjenne på de små opplevelsene i treningen som bidrar til de store opplevelsene i kamp."
       },
       {
         name: "- Suzann Pettersen",
-        img: "img/athletes/tutta1.jpg",
+        img: "img/athletes/Tutta2.jpg",
         subtext: "Golfer",
         quote: "iMax:Focus er kritisk god prioritering og å ta de rette valg underveis, for så å ta ut dette i konkurransene."
       },
@@ -46,7 +46,7 @@ angular.module('focus.services')
       },
       {
         name: "- Marit Breivik",
-        img: "/img/athletes/MaritBreivik_NIFS_crop_blackwhite_150x150.jpg",
+        img: "/img/athletes/MaritBreivik.jpg",
         subtext: "Hovedcoach Lagspillidretter / Landslagstrener 1994-2009, med 13 mesterskapsmedaljer (EM, VM, OL)",
         quote: "Topp prestasjon handler om å være i 'nuet'! Til stede, på trening og i konkurranse, her og nå! Nøkkelen til dette? Oppmerksomhetsprogrammene i iMax:Focus gir deg god veiledning i å øke tilstedeværelsen din både i hverdagen og på trening!"
       },
