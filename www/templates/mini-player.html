@@ -1,5 +1,5 @@
 <div class="bar bar-positive"
-  ng-class="{'bar-footer': platform.isAndroid(), 'bar-subfooter': platform.isIOS()}"
+  ng-class="platform.isAndroid() ? 'bar-footer' : 'bar-subfooter'"
   ng-click="showPlayer()">
 
   <button class="button button-miniplayer button-small button-icon icon"
