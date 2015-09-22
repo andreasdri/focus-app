@@ -27,34 +27,87 @@ angular.module('focus.services')
         return progress;
       },
 
+      /*
+      Method that creates a new mediaobject and the callback functions for
+      when the track finishes and when it's status changes
+
+       */
       new: function(sound) {
-        console.log("new media")
-        if (media) {
-          media.release();
-        }
+      //this.destroy();
+
         var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
 
-        media = $cordovaMedia2.newMedia(src);
+        if (angular.isDefined(media)) {
+          media.release();
+        }
 
-        this.isPlaying = true;
+        media = new Media(src, function () {
+          //Success: Code to be run when a soundtrack successfully stops(or finishes)
+          console.log("Success");
+        },null, function (mediaStatus){
+
+          //When the
+          if(mediaStatus == Media.MEDIA_RUNNING){
+            console.log("Running");
+          }
+          else if(mediaStatus == Media.MEDIA_PAUSED){
+            console.log("Paused");
+          }
+          else if(mediaStatus == Media.MEDIA_STOPPED){
+            console.log("Stopped");
+          }
+
+
+        });
+
+        this.progress = setInterval(function () {
+          // get media position
+          media.getCurrentPosition(
+            // success callback
+            function (position) {
+              if (position > -1) {
+                console.log((position) + " sec");
+              }
+            },
+            // error callback
+            function (e) {
+              console.log("Error getting pos=" + e);
+            }
+          );
+        }, 1000);
+
+
         currentTrack = sound.trackNumber - 1;
 
-        this.playMedia()
+        this.isPlaying = true;
+        media.play();
+
 
       },
 
+      /*
+      Function that either plays or pauses currently selected track
+
+       */
       playOrPause: function() {
         if(media && this.isPlaying) {
           this.isPlaying = false;
           media.pause();
         }
         else if (media && !this.isPlaying) {
-          this.isPlaying = true;
-          this.playMedia()
+          this.isPlaying = true
+          media.play()
         }
       },
 
+      /*
+      Play next soundtrack in sound-library
+
+       */
       next: function() {
+        this.isPlaying = false;
+        media.stop();
+
         if (currentTrack == sounds.length - 1) {
           this.sound = sounds[0];
           this.new(sounds[0]);
@@ -66,6 +119,10 @@ angular.module('focus.services')
 
       },
 
+      /*
+       Play previous soundtrack in sound-library
+
+       */
       prev: function() {
         if (currentTrack == 0) {
           this.sound = sounds[sounds.length - 1];
@@ -82,39 +139,11 @@ angular.module('focus.services')
         media.seekTo(pos * 1000);
       },
 
-      playMedia: function() {
-
-        media.play().then(function() {
-          // success
-          console.log('finished playback');
-        }, null, function(data) {
-
-          console.log('track progress: ' + data.position);
-          progress = data.position;
-
-          if (data.status) {
-            console.log('track status change: ' + data.status);
-          }
-          if (data.duration) {
-            console.log('track duration: ' + data.duration);
-            duration = data.duration;
-          }
-        })
-      },
-
       stop: function(){
         if (!media) return;
 
         if (this.isPlaying) this.isPlaying = false
         media.stop()
-      },
-
-      destroy: function() {
-        if (angular.isDefined(media)) {
-          media.release();
-          media = undefined;
-          currentTrack = undefined;
-        }
       }
 
     };
