@@ -1,5 +1,5 @@
 angular.module('focus.services')
-	.factory('AudioPlayer', function(AudioLibrary, $cordovaMedia2) {
+	.factory('AudioPlayer', function(AudioLibrary, $cordovaMedia2, $interval) {
 
 		var sounds = AudioLibrary.getAllSounds(); // TODO: Make switching between 'basic' and 'olympic' versions possible
     var sound = sounds[0];
@@ -39,6 +39,8 @@ angular.module('focus.services')
 
         if (angular.isDefined(media)) {
           media.release();
+          duration = 0;
+          position = 0;
         }
 
         media = new Media(src, function () {
@@ -60,12 +62,14 @@ angular.module('focus.services')
 
         });
 
-        this.progress = setInterval(function () {
+        progress = $interval(function () {
+          duration = media.getDuration();
           // get media position
           media.getCurrentPosition(
             // success callback
             function (position) {
               if (position > -1) {
+                progress = position;
                 console.log((position) + " sec");
               }
             },
@@ -81,7 +85,6 @@ angular.module('focus.services')
 
         this.isPlaying = true;
         media.play();
-
 
       },
 
