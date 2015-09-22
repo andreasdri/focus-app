@@ -60,6 +60,35 @@ angular.module('focus', ['ionic', 'ngCordova',
       }
     })
 
+    .state('main.options.about', {
+      url : '/about',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/about.html'
+        }
+      }
+    })
+
+    .state('main.options.olympiatoppen', {
+      url : '/olympiatoppen',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/olympiatoppen.html'
+        }
+      }
+    })
+
+    .state('main.options.copyright', {
+      url : '/copyright',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/copyright.html'
+        }
+      }
+    })
+
+
+
     $urlRouterProvider.otherwise('/main/home');
 })
 

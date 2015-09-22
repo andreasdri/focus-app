@@ -29,6 +29,51 @@ $base-background-color: #eaeaea !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+td {
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#iMaxLogo {
+  display: block;
+  margin: auto;
+  max-width: 70%;
+  max-height: 100%;
+  padding-bottom: 10px;
+
+}
+
+#olympiatoppenLogo {
+  display: inline;
+  margin: auto;
+  width: 100%;
+  max-height: 100%;
+  padding-bottom: 10px;
+}
+
+.collaboratorPhoto {
+  display: inline;
+  margin: auto;
+}
+
+.item.item-divider {
+  background-color: #d3d3d3;
+}
 
 .motivationAthlete {
   //text-align: left;

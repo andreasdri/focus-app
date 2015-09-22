@@ -1,37 +1,67 @@
 <ion-view view-title="Options">
   <ion-content padding="true" class="tabs-content has-header">
-    <ul class="list">
-      <li class="item item-toggle">
-        ¿Dónde está la biblioteca?
-        <label class="toggle toggle-positive">
-          <input type="checkbox">
+    <img id="iMaxLogo" src="img/iMaxLogo.png">
 
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </li>
+    <div class="optionsList">
 
-      <li class="item item-toggle">
-        Me llamo T-Bone La araña discoteca.
-        <label class="toggle toggle-positive">
-          <input type="checkbox">
-
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </li>
-    </ul>
-
-    <div class="card">
-      <div class="item item-text-wrap">
-        Bacon ipsum dolor amet ground round landjaeger fatback ham pork pancetta doner ribeye chuck shoulder. Shank
-        pancetta prosciutto turkey short loin, strip steak pork alcatra beef hamburger capicola swine venison turducken.
-        Andouille cupim turducken boudin prosciutto. Short ribs swine kielbasa tenderloin. Ham hock cupim porchetta pork
-        belly. Pork belly ham hock pancetta alcatra pork brisket rump tail shankle corned beef.
-        Version 0.0.2
+      <div class="item item-divider">
+        <h3>Språk</h3>
       </div>
+
+      <label class="item item-radio">
+        <input type="radio" name="language" checked>
+
+        <div class="item-content">
+          Norsk
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+
+      <label class="item item-radio">
+        <input type="radio" name="language">
+
+        <div class="item-content">
+          English
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+
+      <br>
+
+      <div class="item item-divider">
+        <h3>Informasjon</h3>
+      </div>
+
+      <label class="item item-radio" ui-sref="main.options.about">
+        <input type="radio" name="information">
+
+        <div class="item-content">
+          iMax:Focus
+        </div>
+      </label>
+
+      <label class="item item-radio" ui-sref="main.options.olympiatoppen">
+        <input type="radio" name="information">
+
+        <div class="item-content">
+          Olympiatoppen
+        </div>
+      </label>
+
+      <label class="item item-radio" ui-sref="main.options.copyright">
+        <input type="radio" name="information">
+
+        <div class="item-content">
+          Copyright
+        </div>
+      </label>
+
+      <br>
+
+      <div class="video-container">
+        <iframe src="http://www.youtube.com/embed/Az_mt-kDna4" frameborder="0" width="560" height="315"></iframe>
+      </div>
+
     </div>
 
   </ion-content>
