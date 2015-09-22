@@ -1,9 +1,6 @@
 <ion-view view-title="Options">
   <ion-content padding="true" class="tabs-content has-header">
     <img id="iMaxLogo" src="img/iMaxLogo.png">
-    <!--<ion-item ng-repeat="optionsItem in optionsList">-->
-    <!--Hello, {{optionsItem}}!-->
-    <!--</ion-item>-->
 
     <div class="optionsList">
 
@@ -35,14 +32,15 @@
         <h3>Informasjon</h3>
       </div>
 
-      <label class="item item-radio" ui-sref="main.options.about"> <!--TODO: Fix this link!-->
+      <label class="item item-radio" ui-sref="main.options.about">
         <input type="radio" name="information">
+
         <div class="item-content">
           iMax:Focus
         </div>
       </label>
 
-      <label class="item item-radio">
+      <label class="item item-radio" ui-sref="main.options.olympiatoppen">
         <input type="radio" name="information">
 
         <div class="item-content">
@@ -50,7 +48,7 @@
         </div>
       </label>
 
-      <label class="item item-radio">
+      <label class="item item-radio" ui-sref="main.options.copyright">
         <input type="radio" name="information">
 
         <div class="item-content">
@@ -58,17 +56,13 @@
         </div>
       </label>
 
+      <br>
+
       <div class="video-container">
-        <iframe src="http://www.youtube.com/embed/dFVxGRekRSg" frameborder="0" width="560" height="315"></iframe>
+        <iframe src="http://www.youtube.com/embed/Az_mt-kDna4" frameborder="0" width="560" height="315"></iframe>
       </div>
-
-      </div>
-
-
-
 
     </div>
-
 
   </ion-content>
   <ion-footer-bar class="bar-stable"

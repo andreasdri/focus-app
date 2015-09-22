@@ -56,7 +56,6 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent': {
           templateUrl: 'templates/options.html',
-          controller: 'OptionsController'
         }
       }
     })
@@ -66,6 +65,24 @@ angular.module('focus', ['ionic', 'ngCordova',
       views: {
         'mainContent@main': {
           templateUrl: 'templates/about.html'
+        }
+      }
+    })
+
+    .state('main.options.olympiatoppen', {
+      url : '/olympiatoppen',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/olympiatoppen.html'
+        }
+      }
+    })
+
+    .state('main.options.copyright', {
+      url : '/copyright',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/copyright.html'
         }
       }
     })
