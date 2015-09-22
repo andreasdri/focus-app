@@ -61,11 +61,11 @@ angular.module('focus', ['ionic', 'ngCordova',
       }
     })
 
-    .state('main.about', {
+    .state('main.options.about', {
       url : '/about',
       views: {
-        'mainContent': {
-          templateUrl: 'templates/about.html',
+        'mainContent@main': {
+          templateUrl: 'templates/about.html'
         }
       }
     })
