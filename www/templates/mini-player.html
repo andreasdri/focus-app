@@ -1,0 +1,16 @@
+<div class="bar bar-positive"
+  ng-class="platform.isAndroid() ? 'bar-footer' : 'bar-subfooter'"
+  ng-click="showPlayer()">
+
+  <button class="button button-miniplayer button-small button-icon icon"
+    ng-click="playOrPause(); $event.stopPropagation();"
+    ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'">
+  </button>
+
+  <div class="title miniplayer-text">{{sound.title}}</div>
+  <div class="buttons miniplayer-progress">
+      <audio-progress></audio-progress>
+      /
+      <audio-duration></audio-duration>
+  </div>
+</div>

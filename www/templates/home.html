@@ -1,5 +1,5 @@
 <ion-view view-title="Focus">
-  <ion-content padding="true" class="tabs-content has-header">
+  <ion-content padding="true" class="tabs-content has-header has-footer">
     <ion-list>
       <ion-item ng-repeat="sound in sounds"
         ng-click="showPlayer();setSound({{sound.trackNumber}})">
@@ -7,5 +7,5 @@
       </ion-item>
     </ion-list>
   </ion-content>
-
+  <mini-player></mini-player>
 </ion-view>

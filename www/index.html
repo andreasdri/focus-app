@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
     <title></title>
 
 
@@ -32,6 +33,7 @@
     <script src="js/controllers/Motivation.js"></script>
     <script src="js/filters/AudioFilters.js"></script>
     <script src="js/directives/AudioDirectives.js"></script>
+    <script src="js/directives/MiniPlayer.js"></script>
   </head>
   <body ng-app="focus">
       <ion-nav-view></ion-nav-view>

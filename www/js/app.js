@@ -102,6 +102,5 @@ angular.module('focus', ['ionic', 'ngCordova',
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    $rootScope.platform = ionic.Platform;
   });
 })

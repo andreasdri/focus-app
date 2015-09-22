@@ -1,10 +1,10 @@
 <ion-view view-title="Motivation">
   <ion-content padding="true" class="tabs-content has-header">
     <div ng-repeat="athlete in athletes">
-        <p class="motivationHeading">{{athlete.name}}</p>
         <img class="motivationImg" ng-src="{{athlete.img}}">
         <p class="motivationSubText">{{athlete.subtext}}</p>
         <blockquote>{{athlete.quote}}</blockquote>
+        <p class="motivationAthlete">{{athlete.name}}</p>
     </div>
   </ion-content>
 </ion-view>
