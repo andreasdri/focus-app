@@ -1,5 +1,5 @@
 angular.module('focus.services')
-	.factory('AudioPlayer', function(AudioLibrary, $interval) {
+	.factory('AudioPlayer', function(AudioLibrary, $interval, $rootScope) {
 
 		var sounds = AudioLibrary.getAllSounds(); // TODO: Make switching between 'basic' and 'olympic' versions possible
     var sound = sounds[0];
@@ -67,6 +67,7 @@ angular.module('focus.services')
             function (position) {
               if (position > -1) {
                 progress = position;
+                $rootScope.$broadcast('positionChanged', position);
                 console.log((position) + " sec");
               }
             },
