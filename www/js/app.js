@@ -10,7 +10,7 @@ angular.module('focus.directives', []);
 
 angular.module('focus', ['ionic', 'ngCordova',
   'focus.controllers', 'focus.filters', 'focus.services',
-  'focus.directives', 'ngCordova.plugins.media2'])
+  'focus.directives'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

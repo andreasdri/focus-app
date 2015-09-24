@@ -28,14 +28,20 @@ angular.module('focus.controllers')
       }
     })
 
-    $scope.$watch(function() { return AudioPlayer.getProgress() }, function(newVal, oldVal) {
-      if (typeof newVal !== 'undefined') {
-        $scope.progress = AudioPlayer.getProgress();
-      }
+    $scope.$on('positionChanged', function(event, position) {
+      $scope.$apply(function() {
+        if (typeof position !== 'undefined') {
+          $scope.progress = position;
+        }
+      });
     })
 
     $scope.playOrPause = function() {
       AudioPlayer.playOrPause();
+    }
+
+    $scope.sliderTouched = function() {
+      AudioPlayer.sliderTouched();
     }
 
     $scope.next = function() {
@@ -58,5 +64,9 @@ angular.module('focus.controllers')
     $scope.$on('destroy', function() {
       AudioPlayer.destroy();
     })
+
+    $scope.stop = function(){
+      AudioPlayer.stop()
+    }
 
   });

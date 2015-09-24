@@ -2,7 +2,7 @@ angular.module('focus.directives')
 	.directive('audioProgressBar', [function() {
 		return {
 			restrict: 'E',
-			template: '<input type="range" min="0" max="{{duration}}" ng-model="progress" on-release="sliderRelease()">'
+			template: '<input type="range" min="0" max="{{duration}}" on-touch="sliderTouched()" ng-model="progress" on- on-release="sliderRelease()">'
 		}
 	}])
 
