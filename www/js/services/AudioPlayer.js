@@ -46,6 +46,7 @@ angular.module('focus.services')
         media = new Media(src, function () {
           //Success: Code to be run when a soundtrack successfully stops(or finishes)
           console.log("Success");
+          $interval.cancel(progressPromise);
         },null, function (mediaStatus){
 
           //When the
@@ -57,13 +58,13 @@ angular.module('focus.services')
           }
           else if(mediaStatus == Media.MEDIA_STOPPED){
             console.log("Stopped");
-            $interval.cancel();
+            $interval.cancel(progressPromise);
           }
 
 
         });
 
-        progress = $interval(function () {
+        progressPromise = $interval(function () {
           duration = media.getDuration();
           if (progress >= duration-1) {
             functions.next();
@@ -72,7 +73,7 @@ angular.module('focus.services')
           media.getCurrentPosition(
             // success callback
             function (position) {
-              if (position > -1 && !sliderUser)) {
+              if (position > -1 && !sliderUsed) {
                 progress = position;
                 $rootScope.$broadcast('positionChanged', position);
                 console.log((position) + " sec");
