@@ -149,6 +149,7 @@ angular.module('focus.services')
 
       destroy: function() {
         if (angular.isDefined(media)) {
+          media.stop();
           media.release();
           duration = 0;
           progress = 0;
