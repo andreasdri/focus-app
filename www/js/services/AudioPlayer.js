@@ -33,15 +33,9 @@ angular.module('focus.services')
 
        */
       new: function(sound) {
-      //this.destroy();
+        functions.destroy();
 
         var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
-
-        if (angular.isDefined(media)) {
-          media.release();
-          duration = 0;
-          progress = 0;
-        }
 
         media = new Media(src, function () {
           //Success: Code to be run when a soundtrack successfully stops(or finishes)
@@ -142,11 +136,13 @@ angular.module('focus.services')
         media.seekTo(pos * 1000);
       },
 
-      stop: function(){
-        if (!media) return;
-
-        if (this.isPlaying) this.isPlaying = false
-        media.stop()
+      destroy: function() {
+        if (angular.isDefined(media)) {
+          media.release();
+          duration = 0;
+          progress = 0;
+          this.isPlaying = false;
+        }
       }
 
     };
