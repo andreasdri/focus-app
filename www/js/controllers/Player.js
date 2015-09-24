@@ -38,6 +38,10 @@ angular.module('focus.controllers')
       AudioPlayer.playOrPause();
     }
 
+    $scope.sliderTouched = function() {
+      AudioPlayer.sliderTouched();
+    }
+
     $scope.next = function() {
       AudioPlayer.next();
     }

@@ -8,6 +8,7 @@ angular.module('focus.services')
     var currentTrack = sound.trackNumber - 1;
     var duration = 0;
     var progress = 0;
+    var sliderUsed = false;
 
     var functions = {
       setSound: function(trackNumber) {
@@ -27,13 +28,16 @@ angular.module('focus.services')
         return progress;
       },
 
+      sliderTouched: function() {
+        sliderUsed = true;
+      },
+
       /*
       Method that creates a new mediaobject and the callback functions for
       when the track finishes and when it's status changes
 
        */
       new: function(sound) {
-      //this.destroy();
 
         var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
 
@@ -57,6 +61,7 @@ angular.module('focus.services')
           }
           else if(mediaStatus == Media.MEDIA_STOPPED){
             console.log("Stopped");
+            $interval.cancel();
           }
 
 
@@ -68,8 +73,9 @@ angular.module('focus.services')
           media.getCurrentPosition(
             // success callback
             function (position) {
-              if (position > -1) {
-                progress = position;
+              
+              if (position > -1 && !sliderUsed) {
+                progress = Math.round(position);
                 console.log((position) + " sec");
               }
             },
@@ -136,7 +142,9 @@ angular.module('focus.services')
 
       seekTo: function(pos) {
         if (!media) return;
-        media.seekTo(pos * 1000);
+        media.seekTo(pos * 1000)
+
+        sliderUsed = false;
       },
 
       stop: function(){
