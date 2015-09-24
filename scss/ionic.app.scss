@@ -31,10 +31,17 @@ $base-background-color: #eaeaea !default;
 
 
 .motivationAthlete {
-  //text-align: left;
   font-style: italic;
+  text-align: center;
   padding-bottom: 40px;
-  padding-left: 45px;
+  padding-right: 160px;
+}
+@media screen and (max-width: 480px) {
+  .motivationAthlete{
+    padding-left: 44px;
+    padding-right: 0px;
+    text-align: left;
+  }
 }
 
 .motivationImg {
