@@ -1,5 +1,5 @@
 angular.module('focus.services')
-	.factory('AudioPlayer', function(AudioLibrary, $cordovaMedia2, $interval) {
+	.factory('AudioPlayer', function(AudioLibrary, $interval) {
 
 		var sounds = AudioLibrary.getAllSounds(); // TODO: Make switching between 'basic' and 'olympic' versions possible
     var sound = sounds[0];
@@ -9,10 +9,10 @@ angular.module('focus.services')
     var duration = 0;
     var progress = 0;
 
-    return {
+    var functions = {
       setSound: function(trackNumber) {
         this.sound = sounds[trackNumber-1];
-        this.new(this.sound);
+        functions.new(this.sound);
       },
 
       getSound: function() {
@@ -40,7 +40,7 @@ angular.module('focus.services')
         if (angular.isDefined(media)) {
           media.release();
           duration = 0;
-          position = 0;
+          progress = 0;
         }
 
         media = new Media(src, function () {
@@ -108,16 +108,13 @@ angular.module('focus.services')
 
        */
       next: function() {
-        this.isPlaying = false;
-        media.stop();
-
         if (currentTrack == sounds.length - 1) {
           this.sound = sounds[0];
-          this.new(sounds[0]);
+          functions.new(sounds[0]);
         }
         else {
           this.sound = sounds[currentTrack + 1];
-          this.new(sounds[currentTrack + 1]);
+          functions.new(sounds[currentTrack + 1]);
         }
 
       },
@@ -129,11 +126,11 @@ angular.module('focus.services')
       prev: function() {
         if (currentTrack == 0) {
           this.sound = sounds[sounds.length - 1];
-          this.new(sounds[sounds.length - 1]);
+          functions.new(sounds[sounds.length - 1]);
         }
         else {
           this.sound = sounds[currentTrack - 1];
-          this.new(sounds[currentTrack - 1]);
+          functions.new(sounds[currentTrack - 1]);
         }
       },
 
@@ -150,5 +147,7 @@ angular.module('focus.services')
       }
 
     };
+
+    return functions;
 
 	});
