@@ -64,6 +64,9 @@ angular.module('focus.services')
 
         progress = $interval(function () {
           duration = media.getDuration();
+          if (progress >= duration-1) {
+            functions.next();
+          }
           // get media position
           media.getCurrentPosition(
             // success callback
