@@ -38,14 +38,10 @@ angular.module('focus.services')
 
        */
       new: function(sound) {
+        
+        functions.destroy();
 
         var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
-
-        if (angular.isDefined(media)) {
-          media.release();
-          duration = 0;
-          progress = 0;
-        }
 
         media = new Media(src, function () {
           //Success: Code to be run when a soundtrack successfully stops(or finishes)
@@ -69,11 +65,14 @@ angular.module('focus.services')
 
         progress = $interval(function () {
           duration = media.getDuration();
+          if (progress >= duration-1) {
+            functions.next();
+          }
           // get media position
           media.getCurrentPosition(
             // success callback
             function (position) {
-              
+
               if (position > -1 && !sliderUsed) {
                 progress = Math.round(position);
                 console.log((position) + " sec");
@@ -147,11 +146,13 @@ angular.module('focus.services')
         sliderUsed = false;
       },
 
-      stop: function(){
-        if (!media) return;
-
-        if (this.isPlaying) this.isPlaying = false
-        media.stop()
+      destroy: function() {
+        if (angular.isDefined(media)) {
+          media.release();
+          duration = 0;
+          progress = 0;
+          this.isPlaying = false;
+        }
       }
 
     };
