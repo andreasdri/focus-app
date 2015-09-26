@@ -17,28 +17,18 @@
       <button class="button button-clear" ng-click="hidePlayer()">Hide</button>
     </div>
   </ion-header-bar>
-  <ion-content padding="true" ng-controller="PlayerController">
-    <div class="list">
-      <div class="item item-thumbnail-left">
-        <img src="{{sound.art}}">
+  <ion-content class="padding" ng-controller="PlayerController">
+    <h2 class="big-player-heading padding-top">{{sound.title}}</h2>
 
-        <h2>{{sound.title}}</h2>
-
-        <p>{{sound.description}}</p>
-        <a class="button button-icon button-clear ion-ios-rewind"
-           ng-click="prev()"></a>
-        <a class="button button-icon button-clear ion-ios-play" ng-click="playOrPause()"
-           ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></a>
-        <a class="button button-icon button-clear ion-ios-fastforward"
-           ng-click="next()"></a>
-      </div>
-      <div class="item">
-        <div class="range range-positive">
-          <audio-progress></audio-progress>
-          <audio-progress-bar></audio-progress-bar>
-          <audio-duration></audio-duration>
-        </div>
-      </div>
+    <p class="padding-top">{{sound.description}}</p>
+    <audio-progress-bar class="padding-top"></audio-progress-bar>
+    <div class="button-bar button-bar-positive">
+      <button class="button button-positive button-icon icon ion-ios-rewind"
+         ng-click="prev()"></button>
+      <button class="button button-positive button-icon icon ion-ios-play" ng-click="playOrPause()"
+         ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></button>
+      <button class="button button-positive button-icon icon ion-ios-fastforward"
+         ng-click="next()"></button>
     </div>
   </ion-content>
 </ion-modal-view>
