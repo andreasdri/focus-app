@@ -31,7 +31,20 @@ angular.module('focus.controllers')
 
    };
 
-    /*resources.forEach(function(i,x) {
+   /*
+    $scope.images = [];
+
+    var resources = [
+        "http://imaxfocus.com/heleneO_150x150.jpg",
+        "http://imaxfocus.com/olaf_tufte.jpg",
+        "http://imaxfocus.com/alexander_dale_oen.jpg",
+        "http://imaxfocus.com/mette_solli.jpg",
+        "http://imaxfocus.com/tutta1.jpg"
+      ];
+
+    var promises = [];
+
+    resources.forEach(function(i,x) {
       var fileName = i.split("/").pop();
       var targetPath = directory + fileName;
       $cordovaFile.checkFile(directory, fileName)
@@ -47,26 +60,22 @@ angular.module('focus.controllers')
     // Download asset if it doesn't already exist
     function downloadAsset(url, targetPath) {
       console.log("About to start transfer");
-      var authdata = btoa(username + ':' + password);
-      console.log(authdata);
-      promises.push($cordovaFileTransfer.download(url, targetPath,
-        {
-          "Authorization": "Basic " + authdata
-        }, true));
+      promises.push($cordovaFileTransfer.download(url, targetPath, {}, true));
     }
 
     // Refer to asset on device if it already exists
     function referToAsset(targetPath) {
-      $scope.files.push(targetPath);
+      $scope.images.push(targetPath);
     }
 
     $q.all(promises).then(function(res) {
       console.log("in theory, all done");
       for(var i=0; i<res.length; i++) {
-        $scope.files.push(res[i]);
+        $scope.images.push(res[i]);
       }
     });
 
-   };*/
+   };
+   */
 
 });
