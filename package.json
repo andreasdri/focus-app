@@ -27,7 +27,9 @@
     "cordova-plugin-splashscreen",
     "com.ionic.keyboard",
     "cordova-plugin-media",
-    "cordova-plugin-file"
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-zip"
   ],
   "cordovaPlatforms": [
     "ios",
