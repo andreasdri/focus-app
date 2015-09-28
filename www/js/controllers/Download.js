@@ -30,7 +30,7 @@ angular.module('focus.controllers')
     });
 
     function unzipFile() {
-      $cordovaZip.unzip(directory + fileName, directory + "sounds")
+      $cordovaZip.unzip(directory + fileName, directory + "sounds/basic")
       .then(function() {
         console.log("Files unzipped");
         deleteFile();
