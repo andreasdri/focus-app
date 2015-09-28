@@ -6,7 +6,7 @@ angular.module('focus.controllers')
     var directory = cordova.file.dataDirectory;
     var username = "test";
     var password = "test";
-    var url = encodeURI("http://192.168.1.129:3000/download/");
+    var url = encodeURI("http://localhost:3000/download/");
     var fileName = "basic.zip"
     var targetPath = directory + fileName;
     var trustHosts = true;
