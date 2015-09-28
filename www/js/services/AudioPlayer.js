@@ -40,7 +40,8 @@ angular.module('focus.services')
       new: function(sound) {
 
         functions.destroy();
-        var src = cordova.file.dataDirectory + sound.src;
+
+        var src = (ionic.Platform.isAndroid() ? "/android_asset/www/" + sound.src : sound.src);
 
         media = new Media(src, function () {
           //Success: Code to be run when a soundtrack successfully stops(or finishes)
