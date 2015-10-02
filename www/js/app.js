@@ -8,7 +8,7 @@ angular.module('focus.filters', []);
 angular.module('focus.services', []);
 angular.module('focus.directives', []);
 
-angular.module('focus', ['ionic', 'ngCordova',
+angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
   'focus.controllers', 'focus.filters', 'focus.services',
   'focus.directives'])
 
