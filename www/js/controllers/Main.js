@@ -2,36 +2,34 @@ angular.module('focus.controllers')
   .controller('MainController', function($scope, $ionicModal) {
     $scope.list = [
       {
-        title: 'Home',
+        title: 'MyTraining',
         icon: {
-          on: 'ion-music-note',
-          off: 'ion-music-note'
+          on: 'ion-ios-person',
+          off: 'ion-ios-person-outline'
         }
       },
       {
-        title: 'MyTraining',
+        title: 'Library',
+        icon: {
+          on: 'ion-ios-book',
+          off: 'ion-ios-book-outline'
+        }
+      },
+      {
+        title: 'Motivation',
         icon: {
           on: 'ion-ios-body',
           off: 'ion-ios-body-outline'
         }
       },
       {
-        title: 'Purchase',
-        icon:
-        {
-          on: 'ion-ios-cart',
-          off: 'ion-ios-cart-outline'
+        title: 'Options',
+        icon: {
+          on: 'ion-ios-gear',
+          off: 'ion-ios-gear-outline'
         }
-      },
-      {
-          title: 'Options',
-          icon:
-          {
-            on: 'ion-ios-gear',
-            off: 'ion-ios-gear-outline'
-          }
-        }
-      ];
+      }
+    ];
 
     $ionicModal.fromTemplateUrl('templates/player.html', {
       scope: $scope,
