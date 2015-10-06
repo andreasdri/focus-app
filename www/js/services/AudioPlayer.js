@@ -66,9 +66,9 @@ angular.module('focus.services')
 
         progressPromise = $interval(function () {
           duration = media.getDuration();
-          if (progress >= duration-1) {
+          /*if (progress >= duration-1) {
             functions.next();
-          }
+          }*/
           // get media position
           media.getCurrentPosition(
             // success callback
@@ -88,10 +88,13 @@ angular.module('focus.services')
 
 
         currentTrack = sound.trackNumber - 1;
+      },
 
-        this.isPlaying = true;
-        media.play();
-
+      play: function() {
+        if (media) {
+          this.isPlaying = true;
+          media.play();
+        }
       },
 
       /*

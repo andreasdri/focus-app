@@ -4,4 +4,7 @@ angular.module('focus.controllers')
   	$scope.setSound = function(trackNumber) {
   		AudioPlayer.setSound(trackNumber);
   	}
+    $scope.play = function() {
+      AudioPlayer.play();
+    }
   });

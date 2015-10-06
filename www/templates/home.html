@@ -4,7 +4,7 @@
       <ion-item ng-repeat="sound in sounds" class="item-button-right"
         ng-click="showPlayer();setSound({{sound.trackNumber}})">
         {{sound.title}}
-        <button class="button button-positive">
+        <button class="button button-positive" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();">
           <i class="icon ion-ios-play"></i>
         </button>
         <button class="button button-positive button-add">
