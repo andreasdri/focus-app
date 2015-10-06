@@ -30,8 +30,7 @@ angular.module('focus.controllers')
             on: 'ion-ios-gear',
             off: 'ion-ios-gear-outline'
           }
-        },
-
+        }
       ];
 
     $ionicModal.fromTemplateUrl('templates/player.html', {
@@ -46,4 +45,24 @@ angular.module('focus.controllers')
     $scope.hidePlayer = function() {
       $scope.modal.hide();
     };
+
+    $ionicModal.fromTemplateUrl('templates/add-program.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+
+    $scope.showAddCardInformation = function(){
+      $scope.modal.showAddCardInformation();
+    };
+
+    $scope.hideAddCardInformation = function() {
+      $scope.modal.hide();
+    };
+
+
   });
+
+
+

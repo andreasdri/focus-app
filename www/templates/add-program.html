@@ -1,0 +1,31 @@
+<!-- Fullscreen modal view -->
+<style>
+  .modal {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+</style>
+
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Add program</h1>
+
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideAddCardInformation()">Hide</button>
+    </div>
+
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="First Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last Name">
+      </label>
+      <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+      </label>
+    </div>
+</ion-modal-view>
