@@ -32,12 +32,32 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       }
     })
 
-    .state('main.motivation', {
-      url : '/motivation',
+    .state('main.add-program', {
+      url: '/add-program',
       views: {
         'mainContent': {
-          templateUrl: 'templates/motivation.html',
-          controller: 'MotivationController'
+          templateUrl: 'templates/add-program.html',
+          controller: 'AddProgramController'
+        }
+      }
+    })
+
+    .state('main.home.chapterinfo', {
+      url : '/chapterinfo',
+      parent: 'main.home',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/chapter-info.html'
+        }
+      }
+    })
+
+    .state('main.mytraining', {
+      url : '/mytraining',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/my-training.html',
+          controller: 'MyTrainingController'
         }
       }
     })
