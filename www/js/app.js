@@ -32,6 +32,16 @@ angular.module('focus', ['ionic', 'ngCordova',
       }
     })
 
+    .state('main.home.chapterinfo', {
+      url : '/chapterinfo',
+      parent: 'main.home',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/chapterinfo.html'
+        }
+      }
+    })
+
     .state('main.motivation', {
       url : '/motivation',
       views: {
