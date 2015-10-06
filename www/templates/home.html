@@ -1,9 +1,15 @@
 <ion-view view-title="Focus" hide-back-button="true">
   <ion-content padding="true" class="tabs-content has-header has-footer">
     <ion-list>
-      <ion-item ng-repeat="sound in sounds"
+      <ion-item ng-repeat="sound in sounds" class="item-button-right"
         ng-click="showPlayer();setSound({{sound.trackNumber}})">
         {{sound.title}}
+        <button class="button button-positive">
+          <i class="icon ion-ios-play"></i>
+        </button>
+        <button class="button button-positive button-add">
+          <i class="icon ion-ios-plus"></i>
+        </button>
       </ion-item>
     </ion-list>
   </ion-content>
