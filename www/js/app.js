@@ -47,17 +47,17 @@ angular.module('focus', ['ionic', 'ngCordova',
       parent: 'main.home',
       views: {
         'mainContent@main': {
-          templateUrl: 'templates/chapterinfo.html'
+          templateUrl: 'templates/chapter-info.html'
         }
       }
     })
 
-    .state('main.motivation', {
-      url : '/motivation',
+    .state('main.mytraining', {
+      url : '/mytraining',
       views: {
         'mainContent': {
-          templateUrl: 'templates/motivation.html',
-          controller: 'MotivationController'
+          templateUrl: 'templates/my-training.html',
+          controller: 'MyTrainingController'
         }
       }
     })

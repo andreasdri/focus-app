@@ -9,7 +9,7 @@ angular.module('focus.controllers')
         }
       },
       {
-        title: 'Motivation',
+        title: 'MyTraining',
         icon: {
           on: 'ion-ios-body',
           off: 'ion-ios-body-outline'
