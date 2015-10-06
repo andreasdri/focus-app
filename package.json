@@ -29,7 +29,8 @@
     "cordova-plugin-media",
     "cordova-plugin-file",
     "cordova-plugin-file-transfer",
-    "cordova-plugin-zip"
+    "cordova-plugin-zip",
+    "cordova-plugin-transport-security"
   ],
   "cordovaPlatforms": [
     "ios",
