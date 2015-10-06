@@ -33,11 +33,21 @@ angular.module('focus', ['ionic', 'ngCordova',
     })
 
     .state('main.add-program', {
-      url : '/add-program',
+      url: '/add-program',
       views: {
         'mainContent': {
           templateUrl: 'templates/add-program.html',
           controller: 'AddProgramController'
+        }
+      }
+    })
+
+    .state('main.home.chapterinfo', {
+      url : '/chapterinfo',
+      parent: 'main.home',
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/chapterinfo.html'
         }
       }
     })
