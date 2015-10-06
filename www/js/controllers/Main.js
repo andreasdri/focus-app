@@ -37,28 +37,28 @@ angular.module('focus.controllers')
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
-      $scope.modal = modal;
+      $scope.playerModal = modal;
     });
     $scope.showPlayer = function() {
-      $scope.modal.show();
+      $scope.playerModal.show();
     };
     $scope.hidePlayer = function() {
-      $scope.modal.hide();
+      $scope.playerModal.hide();
     };
 
     $ionicModal.fromTemplateUrl('templates/add-program.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
-      $scope.modal = modal;
+      $scope.addCardModal = modal;
     });
 
     $scope.showAddCardInformation = function(){
-      $scope.modal.showAddCardInformation();
+      $scope.addCardModal.show();
     };
 
     $scope.hideAddCardInformation = function() {
-      $scope.modal.hide();
+      $scope.addCardModal.hide();
     };
 
 
