@@ -22,12 +22,12 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       controller: 'MainController'
     })
 
-    .state('main.home', {
-      url : '/home',
+    .state('main.library', {
+      url : '/library',
       views: {
         'mainContent': {
-          templateUrl: 'templates/home.html',
-          controller: 'ChaptersController'
+          templateUrl: 'templates/library.html',
+          controller: 'LibraryController'
         }
       }
     })
@@ -42,9 +42,9 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       }
     })
 
-    .state('main.home.chapterinfo', {
+    .state('main.library.chapterinfo', {
       url : '/chapterinfo',
-      parent: 'main.home',
+      parent: 'main.library',
       views: {
         'mainContent@main': {
           templateUrl: 'templates/chapter-info.html'
@@ -62,12 +62,12 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       }
     })
 
-    .state('main.purchase', {
-      url : '/purchase',
+    .state('main.motivation', {
+      url : '/motivation',
       views: {
         'mainContent': {
-          templateUrl: 'templates/purchase.html',
-          controller: 'DownloadController'
+          templateUrl: 'templates/motivation.html',
+          controller: 'MotivationController'
         }
       }
     })
@@ -110,7 +110,7 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
 
 
 
-    $urlRouterProvider.otherwise('/main/home');
+    $urlRouterProvider.otherwise('/main/mytraining');
 })
 
 .run(function($ionicPlatform, $rootScope) {

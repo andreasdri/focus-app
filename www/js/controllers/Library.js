@@ -1,5 +1,5 @@
 angular.module('focus.controllers')
-	.controller('ChaptersController', function($scope, AudioLibrary, AudioPlayer, $rootScope) {
+	.controller('LibraryController', function($scope, AudioLibrary, AudioPlayer, $rootScope) {
     $scope.sounds = AudioLibrary.getAllSounds();
   	$scope.setSound = function(trackNumber) {
   		AudioPlayer.setSound(trackNumber);
