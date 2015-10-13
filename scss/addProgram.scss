@@ -1,0 +1,26 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+.slider {
+  height: 100%;
+}
+
+.slider-slide {
+  padding-top: 80px;
+  text-align: center;
+}
+
+.slider-pager {
+  bottom: 80px;
+}
+
+.category-heading {
+  font-weight: 300;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.selected {
+  background-color: #cccccc!important;
+}

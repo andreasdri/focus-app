@@ -44,22 +44,6 @@ angular.module('focus.controllers')
       $scope.playerModal.hide();
     };
 
-    $ionicModal.fromTemplateUrl('templates/add-program.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(modal) {
-      $scope.addCardModal = modal;
-    });
-
-    $scope.showAddCardInformation = function(){
-      $scope.addCardModal.show();
-    };
-
-    $scope.hideAddCardInformation = function() {
-      $scope.addCardModal.hide();
-    };
-
-
   });
 
 

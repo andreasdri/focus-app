@@ -32,10 +32,10 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       }
     })
 
-    .state('main.add-program', {
+    .state('main.mytraining.addprogram', {
       url: '/add-program',
       views: {
-        'mainContent': {
+        'mainContent@main': {
           templateUrl: 'templates/add-program.html',
           controller: 'AddProgramController'
         }
