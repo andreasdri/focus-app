@@ -6,7 +6,7 @@
         <button class="button button-positive" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();">
           <i class="icon ion-ios-play"></i>
         </button>
-        <button class="button button-positive button-add" ng-click="selectedSound(sound);showAddCardInformation();$event.stopPropagation();">
+        <button class="button button-positive button-add" ui-sref="main.mytraining.addprogram" ng-click="selectedSound(sound);$event.stopPropagation();">
           <i class="icon ion-ios-plus"></i>
         </button>
       </ion-item>
