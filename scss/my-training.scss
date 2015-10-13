@@ -1,0 +1,50 @@
+/* Agenda / My Training specifics */
+.agenda-card {
+  height: 100px;
+  border-radius: 6px;
+}
+
+.agenda-card-complete-true {
+  border-top: 5px solid $balanced;
+}
+
+.agenda-card-complete-false {
+  border-top: 5px solid $energized;
+}
+
+.agenda-title {
+  font-size: 18px!important;
+}
+
+.agenda-bottom-text {
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+.agenda-progress-text {
+  font-size: 10px!important;
+}
+
+.agenda-icon-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: $dark;
+}
+
+.agenda-icon-reminder {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  font-size: 22px;
+  color: $energized;
+}
+
+.agenda-icon-add {
+  position: absolute;
+  right: 50%;
+  font-size: 22px;
+  color: $dark;
+  bottom: 1px;
+}

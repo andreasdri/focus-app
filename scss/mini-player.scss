@@ -1,0 +1,76 @@
+/* MiniPlayer specifics */
+.miniplayer-text {
+  font-size: 12px;
+  margin: auto!important;
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 30px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  height: 20px;
+}
+
+.buttons.miniplayer-progress {
+  position:absolute!important;
+  right:12px!important;
+  top: 0!important;
+  bottom: 0!important;
+  margin: auto!important;
+  min-width: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 500;
+  height: auto;
+  overflow: auto;
+  display: table;
+}
+
+.button-miniplayer {
+  bottom:4px!important;
+}
+
+/* Alternative layout 
+.miniplayer-text {
+  font-size: 12px;
+  margin: auto!important;
+  position:absolute;
+  left: 10px!important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 30px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  height: 20px;
+}
+
+.buttons.miniplayer-progress {
+  position:absolute!important;
+  right:36px!important;
+  top: 0!important;
+  bottom: 0!important;
+  margin: auto!important;
+  min-width: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 500;
+  height: auto;
+  overflow: auto;
+  display: table;
+}
+
+.button-miniplayer {
+  position:absolute!important;
+  bottom:4px!important;
+  right:0;
+}
+*/
