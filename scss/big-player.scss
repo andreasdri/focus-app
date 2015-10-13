@@ -1,0 +1,11 @@
+/* Big Player specifics */
+.button-bar-positive {
+  .button, .button:hover {
+    color: $positive;
+  }
+}
+
+.big-player-heading {
+  text-align: center;
+  font-weight: 300;
+}

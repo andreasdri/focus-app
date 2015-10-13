@@ -29,82 +29,18 @@ $base-background-color: #eaeaea !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+@import "mini-player";
+@import "my-training";
+@import "options";
+@import "big-player.scss";
+@import "motivation.scss";
+
 td {
   text-align: center;
 }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px; height: 0; overflow: hidden;
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#iMaxLogo {
-  display: block;
-  margin: auto;
-  max-width: 70%;
-  max-height: 100%;
-  padding-bottom: 10px;
-
-}
-
-#olympiatoppenLogo {
-  display: inline;
-  margin: auto;
-  width: 100%;
-  max-height: 100%;
-  padding-bottom: 10px;
-}
-
-.collaboratorPhoto {
-  display: inline;
-  margin: auto;
-}
-
 .item.item-divider {
   background-color: #d3d3d3;
-}
-
-.motivationAthlete {
-  font-style: italic;
-  text-align: center;
-  padding-bottom: 40px;
-  padding-right: 160px;
-}
-@media screen and (max-width: 480px) {
-  .motivationAthlete{
-    padding-left: 44px;
-    padding-right: 0px;
-    text-align: left;
-  }
-}
-
-.motivationImg {
-  display: block;
-  width: 300px;
-  margin: auto;
-}
-
-.motivationText {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.motivationSubText {
-  font-style: italic;
-  text-align: center;
-  width: 300px;
-  margin:0 auto;
 }
 
 .selected {
@@ -123,17 +59,6 @@ td {
   }
 }
 
-/* MiniPlayer specifics */
-.miniplayer-text {
-  font-size: 14px!important;
-}
-
-.buttons.miniplayer-progress {
-  @extend .mini-player-text;
-  top: 12px!important;
-
-}
-
 blockquote {
   border-left: 5px solid $positive;
   padding: 10px 0px 15px 10px;
@@ -142,74 +67,11 @@ blockquote {
   text-align: justify;
   text-justify: inter-word;
 }
-
-/* Big Player specifics */
-.button-bar-positive {
-  .button, .button:hover {
-    color: $positive;
-  }
-}
-
-.big-player-heading {
-  text-align: center;
-  font-weight: 300;
-}
-
-/* Agenda specifics */
-.agenda-card {
-  height: 100px;
-  border-radius: 6px;
-}
-
-.agenda-card-complete-true {
-  border-top: 5px solid $balanced;
-}
-
-.agenda-card-complete-false {
-  border-top: 5px solid $energized;
-}
-
-.agenda-title {
-  font-size: 18px!important;
-}
-
-.agenda-bottom-text {
-  margin-top: 8px;
-  font-weight: 300;
-}
-
-.agenda-progress-text {
-  font-size: 10px!important;
-}
-
-.agenda-icon-top-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: $dark;
-}
-
-.agenda-icon-reminder {
-  position: absolute;
-  bottom: 20px;
-  right: 10px;
-  font-size: 22px;
-  color: $energized;
-}
-
-.agenda-icon-add {
-  position: absolute;
-  right: 50%;
-  font-size: 22px;
-  color: $dark;
-  bottom: 1px;
-}
-
 .button-add {
   margin-right: 50px;
 }
 
 .item-chapter {
   padding-right: 0 !important;
+  font-size: 12px;
 }
