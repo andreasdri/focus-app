@@ -13,7 +13,7 @@ angular.module('focus.controllers')
 
       {
         name: "Timeout",
-        date: "onsdag",
+        date: "Onsdag",
         time: "21:00",
         completed: false,
         reminder: true,
@@ -33,7 +33,7 @@ angular.module('focus.controllers')
 
       {
         name: "Om å sette seg mål",
-        date: "fredag",
+        date: "Fredag",
         time: "12:00",
         completed: false,
         reminder: true,

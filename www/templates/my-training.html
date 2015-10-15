@@ -1,15 +1,18 @@
 <ion-view view-title="Min Trening" hide-back-button="true">
   <ion-content padding="true" class="tabs-content has-header">
-    <div class="card agenda-card agenda-card-complete-{{exercise.completed}}" ng-repeat="exercise in exercises">
-      <div class="item">
+    <div class="card agenda-card" ng-repeat="exercise in exercises">
+      <div class="agenda-item item">
+        <a class="agenda-icon-play icon ion-play"></a>
         <p class="agenda-title">{{exercise.name}}</p>
+        <div class="agenda-progress">
+          <progress max="{{exercise.goal}}" value="{{exercise.played}}"></progress>
+        </div>
         <p class="agenda-progress-text">Fullført {{exercise.played}} av {{exercise.goal}} ganger</p>
-        <p class="agenda-bottom-text" ng-show="{{exercise.completed}}">Du har fullført dette programmet!</p>
-        <p class="agenda-bottom-text" ng-show="{{exercise.reminder}}">Neste - {{exercise.date}}, kl.{{exercise.time}}</p>
-        <a class="agenda-icon-reminder icon ion-ios-bell" ng-show="{{exercise.reminder}}"></a>
-        <a class="agenda-icon-top-right icon" ng-class="{'ion-ios-close' : exercise.completed, 'ion-edit' : !exercise.completed}"></a>
+        <p class="agenda-bottom-text" ng-show="{{exercise.reminder}}">{{exercise.date}}, kl.{{exercise.time}}</p>
+        <a class="agenda-icon-bottom-right icon ion-edit"></a>
+        <a class="agenda-icon-top-right icon ion-close-round"></a>
       </div>
     </div>
-    <a class="agenda-icon-add icon ion-ios-plus" ui-sref="main.mytraining.addprogram"></a>
+    <a class="agenda-icon-add icon ion-plus-round" ui-sref="main.mytraining.addprogram"></a>
   </ion-content>
 </ion-view>
