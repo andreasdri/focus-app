@@ -2,7 +2,7 @@
 <button ng-repeat="category in parent.categories"
   class="button button-full button-stable"
   ng-class="{ 'selected': parent.active === $index }"
-  ng-click="parent.toggleActive($index)">
+  ng-click="parent.toggleActive($index)" ui-sref="main.mytraining.chooseprogram">
   {{category.title}}
 </button>
 
