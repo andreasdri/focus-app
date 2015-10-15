@@ -1,6 +1,6 @@
 angular.module('focus.controllers')
   .controller('AddProgramController', function($scope, $ionicSlideBoxDelegate,
-      SoundCategory) {
+      SoundCategory, AudioLibrary) {
     $scope.next = function() {
       $ionicSlideBoxDelegate.next();
     };
@@ -11,7 +11,6 @@ angular.module('focus.controllers')
     $scope.slideChanged = function(index) {
       $scope.slideIndex = index;
     };
-
     $scope.parent = {};
 
     $scope.parent.categories = SoundCategory.getCategories();
@@ -19,5 +18,8 @@ angular.module('focus.controllers')
     $scope.parent.toggleActive = function(index) {
       $scope.parent.active = index;
     };
+
+    $scope.sounds = AudioLibrary.getAllSounds();
+
 
   });
