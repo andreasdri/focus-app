@@ -24,7 +24,7 @@
   position: absolute;
   font-weight: 400;
   left: 70px;
-  bottom: 5px;
+  bottom: 10px;
 }
 
 .agenda-progress-text {
@@ -95,4 +95,8 @@ progress[value]::-webkit-progress-value {
     -webkit-linear-gradient(left, #6AC5A6, #6AC5A6);
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.popup {
+  border-radius: 6px!important;
 }

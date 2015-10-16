@@ -1,0 +1,33 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Rediger Program</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideEditProgram()">Hide</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding" ng-controller="MyTrainingController">
+    <h2 class="big-player-heading padding-top">{{selected.name}}</h2>
+    <div class="padding input-inline">
+      <label>Hyppighet (ganger per uke)</label>
+      <input maxlength="2" type="number" value="{{selected.frequency}}">
+    </div>
+    <div class="padding input-inline">
+      <label>Varighet (antall uker)</label>
+      <input maxlength="2" type="number" value="{{selected.duration}}">
+    </div>
+    <div class="padding">
+      <p>Varsel: På en dag</p>
+      <div class="left-box">
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.mon" ng-checked="selected.checked.mon">Mandag</ion-checkbox>
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.tue" ng-checked="selected.checked.tue">Tirsdag</ion-checkbox>
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.wed" ng-checked="selected.checked.wed">Onsdag</ion-checkbox>
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.thu" ng-checked="selected.checked.thu">Torsdag</ion-checkbox>
+      </div>
+      <div class="right-box">
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.fri" ng-checked="selected.checked.fri">Fredag</ion-checkbox>
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.sat" ng-checked="selected.checked.sat">Lørdag</ion-checkbox>
+        <ion-checkbox class="edit-checkbox" ng-model="selected.checked.sun" ng-checked="selected.checked.sun">Søndag</ion-checkbox>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -9,8 +9,8 @@
         </div>
         <p class="agenda-progress-text">Fullført {{exercise.played}} av {{exercise.goal}} ganger</p>
         <p class="agenda-bottom-text" ng-show="{{exercise.reminder}}">{{exercise.date}}, kl.{{exercise.time}}</p>
-        <a class="agenda-icon-bottom-right icon ion-edit"></a>
-        <a class="agenda-icon-top-right icon ion-close-round"></a>
+        <a class="agenda-icon-bottom-right icon ion-edit" ng-click="showEditProgram(exercise)"></a>
+        <a class="agenda-icon-top-right icon ion-close-round" ng-click="confirmDelete(exercise)"></a>
       </div>
     </div>
     <a class="agenda-icon-add icon ion-plus-round" ui-sref="main.mytraining.addprogram"></a>

@@ -44,6 +44,20 @@ angular.module('focus.controllers')
       $scope.playerModal.hide();
     };
 
+    $ionicModal.fromTemplateUrl('templates/edit-program.html', {
+      scope: $scope,
+      controller: 'MyTrainingController',
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.editProgram = modal;
+    });
+    $scope.showEditProgram = function(exercise) {
+      $scope.selected = exercise;
+      $scope.editProgram.show();
+    };
+    $scope.hideEditProgram = function() {
+      $scope.editProgram.hide();
+    };
   });
 
 
