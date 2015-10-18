@@ -2,9 +2,9 @@
 
 <button ng-repeat="category in parent.categories"
         class="button button-full button-stable"
-        ng-class="{ 'selected': parent.active === $index }"
-        ng-click="parent.toggleActive($index)">
+        ng-class="{ 'selected': parent.active.one === $index }"
+        ng-click="parent.toggleActive($index, 'one')">
   {{category.title}}
 </button>
 
-<p class="padding-top">{{parent.categories[parent.active].description}}</p>
+<p class="padding-top">{{parent.categories[parent.active.one].description}}</p>

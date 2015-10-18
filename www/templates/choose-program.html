@@ -2,9 +2,9 @@
 
 <button ng-repeat="sound in sounds | filter:filterCategory()"
         class="button button-full button-stable"
-        ng-class="{ 'selected': parent.active_1 === $index }"
-        ng-click="parent.toggleActive_1($index)">
+        ng-class="{ 'selected': parent.active.two === $index }"
+        ng-click="parent.toggleActive($index, 'two')">
   {{sound.title}}
 </button>
 
-<p class="padding-top">{{sounds[parent.active_1].description}}</p>
+<p class="padding-top">{{sounds[parent.active.two].description}}</p>

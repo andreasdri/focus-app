@@ -19,40 +19,19 @@ angular.module('focus.controllers')
 
     $scope.parent.categories = SoundCategory.getCategories();
 
-    // Tracks index of page 1
-    $scope.parent.active = 0;
-    $scope.parent.toggleActive = function(index) {
-      $scope.parent.active = index;
-    };
-
-    // Tracks index of page 2
-    $scope.parent.active_1 = 0;
-    $scope.parent.toggleActive_1 = function(index) {
-      $scope.parent.active_1 = index;
+    // Tracks index of page 1 and 2
+    $scope.parent.active = {
+      'one': 0,
+      'two': 0
+    }
+    $scope.parent.toggleActive = function(index, page) {
+      $scope.parent.active[page] = index;
     };
 
     $scope.sounds = AudioLibrary.getAllSounds();
 
     $scope.filterCategory = function() {
-      switch($scope.parent.active) {
-        case 0:
-          return $scope.parent.categories[0].id;
-          break;
-        case 1:
-          return $scope.parent.categories[1].id;
-          break;
-        case 2:
-          return $scope.parent.categories[2].id;
-          break;
-        case 3:
-          return $scope.parent.categories[3].id;
-          break;
-        case 4:
-          return $scope.parent.categories[4].id;
-          break;
-        default:
-              return null;
-      }
+      return $scope.parent.categories[$scope.parent.active.one].id;
     }
 
 
