@@ -1,10 +1,27 @@
 <h4 class="category-heading">Velg program</h4>
 
-<button ng-repeat="sound in sounds | filter:filterCategory()"
-        class="button button-full button-stable"
+<div ng-repeat="sound in sounds | filter:filterCategory()">
+  <button class="button button-full button-stable"
         ng-class="{ 'selected': parent.active.two === $index }"
         ng-click="parent.toggleActive($index, 'two')">
-  {{sound.title}}
-</button>
+    {{sound.title}}
+  </button>
+  <div class="padding-bottom" ng-if="parent.active.two === $index">
+    <p class="padding">{{sounds[parent.active.two].description}}</p>
+    <div class="input-inline">
+      <label>Hyppighet (ganger per uke)</label>
+      <input maxlength="2" min="0" type="number" value="{{selected.frequency}}"
+        pattern="\d*">
+    </div>
+    <div class="input-inline padding-bottom">
+      <label>Varighet (antall uker)</label>
+      <input maxlength="2" min="0" type="number" value="{{selected.duration}}"
+        pattern="\d*">
+    </div>
+    <button class="button button-royal button-outline">
+      Legg til program
+    </button>
 
-<p class="padding-top">{{sounds[parent.active.two].description}}</p>
+  </div>
+</div>
+

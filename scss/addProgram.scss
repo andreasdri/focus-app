@@ -24,3 +24,15 @@ body {
 .selected {
   background-color: #cccccc!important;
 }
+
+.input-inline label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.input-inline input {
+  width: 35px;
+  border: 1px solid #ccc !important;
+  text-align: center;
+  display: inline-block;
+}
