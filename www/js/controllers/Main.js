@@ -1,5 +1,5 @@
 angular.module('focus.controllers')
-  .controller('MainController', function($scope, $ionicModal) {
+  .controller('MainController', function($scope, $ionicModal, AudioPlayer, $rootScope, $ionicScrollDelegate) {
     $scope.list = [
       {
         title: 'Min trening',
@@ -34,6 +34,19 @@ angular.module('focus.controllers')
         }
       }
     ];
+
+    $scope.resize = function() {
+      $ionicScrollDelegate.resize();
+    };
+
+    $scope.mediaPlaying = function() {
+      var conditional = (AudioPlayer.getMedia() != null)
+      $rootScope.mediaPlaying = conditional;
+      if (conditional) {
+        $scope.resize();
+      }
+      return conditional;
+    };
 
     $ionicModal.fromTemplateUrl('templates/player.html', {
       scope: $scope,

@@ -1,5 +1,5 @@
 <ion-view view-title="Bibliotek" hide-back-button="true">
-  <ion-content padding="true" class="tabs-content has-header has-footer">
+  <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <ion-list>
       <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ui-sref="main.library.chapterinfo" ng-click="selectedSound(sound);">
         {{sound.title}}
