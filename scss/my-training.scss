@@ -36,7 +36,7 @@
 
 .agenda-icon-play {
   font-size: 48px;
-  color: $royal;
+  color: $positive;
   position: absolute;
   top: 25px;
   left: 20px;
@@ -47,7 +47,7 @@
   top: 10px;
   right: 10px;
   font-size: 20px;
-  color: $royal;
+  color: $positive;
 }
 
 .agenda-icon-bottom-right {
@@ -55,7 +55,7 @@
   bottom: 10px!important;
   right: 8px!important;
   font-size: 22px;
-  color: $royal;
+  color: $positive;
 }
 
 .agenda-icon-add {
@@ -83,8 +83,8 @@
 .agenda-progress > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: rgb(43,194,83);
