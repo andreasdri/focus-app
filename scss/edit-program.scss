@@ -1,0 +1,29 @@
+.input-inline label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.input-inline input {
+  width: 35px;
+  border: 1px solid #ccc !important;
+  text-align: center;
+  display: inline-block;
+}
+
+.edit-checkbox {
+  width: 150px!important;
+  border: 0;
+  height: 50px!important;
+}
+
+.left-box {
+  position: absolute;
+  left: 0;
+  width: 50%;
+}
+
+.right-box {
+  position: absolute;
+  right: 0;
+  width: 50%;
+}

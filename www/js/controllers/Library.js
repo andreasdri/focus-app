@@ -7,7 +7,4 @@ angular.module('focus.controllers')
     $scope.play = function() {
       AudioPlayer.play();
     }
-    $scope.selectedSound = function(sound) {
-      $rootScope.select = sound;
-    }
   });
