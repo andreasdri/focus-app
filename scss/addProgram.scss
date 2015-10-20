@@ -36,3 +36,16 @@ body {
   text-align: center;
   display: inline-block;
 }
+
+.datepicker li {
+  display: inline-block!important;
+}
+
+.edit-checkbox.item {
+  font-size: 14px!important;
+  padding: 10px!important;
+}
+
+.edit-checkbox.item-checkbox {
+  padding-left: 50px!important;
+}

@@ -15,9 +15,10 @@ angular.module('focus.controllers')
         $scope.parent.active_1 = 0;
       }
     };
-    $scope.parent = {};
 
+    $scope.parent = {};
     $scope.parent.categories = SoundCategory.getCategories();
+    $scope.parent.selected = {};
 
     // Tracks index of page 1 and 2
     $scope.parent.active = {

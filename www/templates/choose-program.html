@@ -10,15 +10,56 @@
     <p class="padding">{{sounds[parent.active.two].description}}</p>
     <div class="input-inline">
       <label>Hyppighet (ganger per uke)</label>
-      <input maxlength="2" min="0" type="number" value="{{selected.frequency}}"
+      <input maxlength="2" min="0" type="number" value="{{parent.selected.frequency}}"
         pattern="\d*">
     </div>
     <div class="input-inline padding-bottom">
       <label>Varighet (antall uker)</label>
-      <input maxlength="2" min="0" type="number" value="{{selected.duration}}"
+      <input maxlength="2" min="0" type="number" value="{{parent.selected.duration}}"
         pattern="\d*">
     </div>
-    <button class="button button-royal button-outline">
+    <div>
+      <label>Varsel: På en dag</label>
+    </div>
+    <ul class="datepicker padding">
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.mon">
+          Mandag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.tue">
+          Tirsdag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.wed">
+          Onsdag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.thu">
+          Torsdag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.fri">
+          Fredag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.sat">
+          Lørdag
+        </ion-checkbox>
+      </li>
+      <li>
+        <ion-checkbox class="edit-checkbox" ng-model="parent.selected.checked.sun">
+          Søndag
+        </ion-checkbox>
+      </li>
+    </ul>
+
+    <button class="button button-royal button-outline button-medium">
       Legg til program
     </button>
 
