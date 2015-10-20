@@ -1,6 +1,8 @@
 angular.module('focus.controllers')
-	.controller('MyTrainingController', function($scope) {
-  	$scope.exercises = [
+	.controller('MyTrainingController', function($scope, TrainingProgram) {
+    programs = [];
+    getPrograms();
+    /*$scope.exercises = [
       {
         name: "Konkurranseforberedelser",
         date: null,
@@ -40,5 +42,47 @@ angular.module('focus.controllers')
         played: 0,
         goal: 2
       }
-    ]
-  });
+    ]*/
+
+
+
+  // section for testing ng-database
+
+  $scope.exampleProgram = {
+    name: "et fint program",
+    reminder: false,
+    times: [],
+    played: 1,
+    duration: 3,
+    frequency: 3,
+    completed: false,
+    checked: {
+      mon: false,
+      tue: false,
+      wed: false,
+      thu: false,
+      fri: false,
+      sat: false,
+      sun: false,
+    }
+  };
+
+  function getPrograms() {
+    TrainingProgram.getPrograms().then(function(result) {
+      $scope.programs = result;
+    });
+  };
+
+  $scope.addProgram = function(program) {
+      TrainingProgram.addProgram(program).then(function(result) {
+      console.log(result.insertId);
+      $scope.programs.push(program);
+    });
+  };
+
+  $scope.clearPrograms = function() {
+    TrainingProgram.clear();
+    $scope.programs = [];
+  };
+
+});

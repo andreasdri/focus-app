@@ -1,15 +1,17 @@
 <ion-view view-title="Min Trening" hide-back-button="true">
   <ion-content padding="true" class="tabs-content has-header">
-    <div class="card agenda-card agenda-card-complete-{{exercise.completed}}" ng-repeat="exercise in exercises">
+    <div class="card agenda-card agenda-card-complete-{{program.completed}}" ng-repeat="program in programs track by $index">
       <div class="item">
-        <p class="agenda-title">{{exercise.name}}</p>
-        <p class="agenda-progress-text">Fullført {{exercise.played}} av {{exercise.goal}} ganger</p>
-        <p class="agenda-bottom-text" ng-show="{{exercise.completed}}">Du har fullført dette programmet!</p>
-        <p class="agenda-bottom-text" ng-show="{{exercise.reminder}}">Neste - {{exercise.date}}, kl.{{exercise.time}}</p>
-        <a class="agenda-icon-reminder icon ion-ios-bell" ng-show="{{exercise.reminder}}"></a>
-        <a class="agenda-icon-top-right icon" ng-class="{'ion-ios-close' : exercise.completed, 'ion-edit' : !exercise.completed}"></a>
+        <p class="agenda-title">{{program.name}}</p>
+        <p class="agenda-progress-text">Fullført {{program.played}} av {{program.goal}} ganger</p>
+        <p class="agenda-bottom-text" ng-show="{{program.completed}}">Du har fullført dette programmet!</p>
+        <p class="agenda-bottom-text" ng-show="{{program.reminder}}">Neste - {{program.date}}, kl.{{program.time}}</p>
+        <a class="agenda-icon-reminder icon ion-ios-bell" ng-show="{{program.reminder}}"></a>
+        <a class="agenda-icon-top-right icon" ng-class="{'ion-ios-close' : program.completed, 'ion-edit' : !program.completed}"></a>
       </div>
     </div>
     <a class="agenda-icon-add icon ion-ios-plus" ui-sref="main.mytraining.addprogram"></a>
+    <button ng-click="addProgram(exampleProgram)">ADD</button>
+    <button ng-click="clearPrograms()">CLEAR</button>
   </ion-content>
 </ion-view>

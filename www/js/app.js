@@ -8,7 +8,7 @@ angular.module('focus.filters', []);
 angular.module('focus.services', []);
 angular.module('focus.directives', []);
 
-angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
+angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPatch',
   'focus.controllers', 'focus.filters', 'focus.services',
   'focus.directives'])
 
@@ -111,6 +111,25 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
 
 
     $urlRouterProvider.otherwise('/main/mytraining');
+})
+
+// preliminary data structure for a program
+
+.config(function(ngdbProvider) {
+  var programsRepository = {
+    id:        'ID',
+    name:      'STRING',
+    reminder:  'BOOLEAN',
+    times:     'ARRAY',
+    played:    'NUMBER',
+    duration:  'NUMBER',
+    frequency: 'NUMBER',
+    completed: 'BOOLEAN',
+    checked:   'OBJECT'
+  };
+
+  ngdbProvider
+    .setRepository('newPrograms', programsRepository)
 })
 
 .run(function($ionicPlatform, $rootScope) {
