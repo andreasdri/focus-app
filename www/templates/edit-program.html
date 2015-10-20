@@ -7,14 +7,8 @@
   </ion-header-bar>
   <ion-content class="padding" ng-controller="MyTrainingController">
     <h2 class="big-player-heading padding-top">{{selected.name}}</h2>
-    <div class="padding input-inline">
-      <label>Hyppighet (ganger per uke)</label>
-      <input maxlength="2" type="number" value="{{selected.frequency}}">
-    </div>
-    <div class="padding input-inline">
-      <label>Varighet (antall uker)</label>
-      <input maxlength="2" type="number" value="{{selected.duration}}">
-    </div>
+    <program-frequency></program-frequency>
+    <program-duration></program-duration>
     <div class="padding">
       <p>Varsel: På en dag</p>
       <div class="left-box">

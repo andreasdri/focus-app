@@ -5,7 +5,7 @@
         <a class="agenda-icon-play icon ion-play"></a>
         <p class="agenda-title">{{exercise.name}}</p>
         <div class="agenda-progress">
-          <progress max="{{exercise.goal}}" value="{{exercise.played}}"></progress>
+          <span style="width: {{exercise.played*100/exercise.goal}}%"></span>
         </div>
         <p class="agenda-progress-text">Fullført {{exercise.played}} av {{exercise.goal}} ganger</p>
         <p class="agenda-bottom-text" ng-show="{{exercise.reminder}}">{{exercise.date}}, kl.{{exercise.time}}</p>
