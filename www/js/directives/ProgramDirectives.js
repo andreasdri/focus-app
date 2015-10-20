@@ -4,7 +4,7 @@ angular.module('focus.directives')
       restrict: 'E',
       template: '<div class="padding input-inline"> \
       <label>Hyppighet (ganger per uke)</label> \
-      <input maxlength="2" type="number" value="{{selected.frequency}}"> \
+      <input maxlength="2" type="tel" ng-model="selected.frequency"> \
       </div>'
     };
   }])
@@ -14,7 +14,7 @@ angular.module('focus.directives')
       restrict: 'E',
       template: '<div class="padding input-inline"> \
       <label>Varighet (antall uker)</label> \
-      <input maxlength="2" type="number" value="{{selected.duration}}"> \
+      <input maxlength="2" type="tel" ng-model="selected.duration"> \
       </div>'
     };
   }]);
