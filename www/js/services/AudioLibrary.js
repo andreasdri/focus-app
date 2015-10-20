@@ -258,11 +258,15 @@ angular.module('focus.services')
     ];
 
     return {
-
       getAllSounds: function() {
         return sounds;
+      },
+
+      getDescriptions: function() {
+        return sounds.description;
       }
 
     };
+
 
   });

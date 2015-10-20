@@ -76,7 +76,7 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
       url : '/options',
       views: {
         'mainContent': {
-          templateUrl: 'templates/options.html',
+          templateUrl: 'templates/options.html'
         }
       }
     })
