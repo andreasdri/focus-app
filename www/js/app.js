@@ -49,6 +49,9 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch',
         'mainContent@main': {
           templateUrl: 'templates/chapter-info.html'
         }
+      },
+      params: {
+        selectedSound: null
       }
     })
 

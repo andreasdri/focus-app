@@ -1,8 +1,8 @@
 <ion-view view-title="Chapter Info">
-  <ion-content padding="true" class="tabs-content has-header">
-    <div class="item item-text-wrap">
-      <h2 class="padding-top">{{select.title}}</h2>
-      <p class="padding-top">{{select.description}}</p>
+  <ion-content padding="true" class="tabs-content has-header" ng-controller="ChapterInfoController">
+    <div class="item item-text-wrap" ng-init="poop()">
+      <h2 class="padding-top">{{selectedSound.title}}</h2>
+      <p class="padding-top">{{selectedSound.description}}</p>
     </div>
   </ion-content>
   <mini-player></mini-player>
