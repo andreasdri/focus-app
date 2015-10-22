@@ -32,6 +32,10 @@ angular.module('focus.services')
         sliderUsed = true;
       },
 
+      getMedia: function() {
+        return media;
+      },
+
       /*
       Method that creates a new mediaobject and the callback functions for
       when the track finishes and when it's status changes
