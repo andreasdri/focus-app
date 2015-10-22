@@ -1,6 +1,6 @@
 {
   "name": "focus-app",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "focus-app: An Ionic project",
   "private": true,
   "dependencies": {
