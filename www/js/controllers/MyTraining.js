@@ -1,7 +1,6 @@
 angular.module('focus.controllers')
 	.controller('MyTrainingController', function($scope, TrainingProgram) {
-    programs = [];
-    getPrograms();
+    $scope.programs = [];
     /*$scope.exercises = [
       {
         name: "Konkurranseforberedelser",
@@ -67,7 +66,7 @@ angular.module('focus.controllers')
     }
   };
 
-  function getPrograms() {
+  $scope.getPrograms = function() {
     TrainingProgram.getPrograms().then(function(result) {
       $scope.programs = result;
     });

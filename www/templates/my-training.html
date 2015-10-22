@@ -1,5 +1,5 @@
 <ion-view view-title="Min Trening" hide-back-button="true">
-  <ion-content padding="true" class="tabs-content has-header">
+  <ion-content padding="true" class="tabs-content has-header" ng-init="getPrograms()">
     <div class="card agenda-card agenda-card-complete-{{program.completed}}" ng-repeat="program in programs track by $index">
       <div class="item">
         <p class="agenda-title">{{program.name}}</p>

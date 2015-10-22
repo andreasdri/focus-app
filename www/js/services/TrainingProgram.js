@@ -1,6 +1,5 @@
 angular.module('focus.services')
 .factory('TrainingProgram', function(ngdb) {
-
   var programsRepository = ngdb.getRepository('newPrograms');
 
   return {
@@ -15,7 +14,7 @@ angular.module('focus.services')
 
     clear: function() {
       programsRepository.delete();
-    }
+    },
 
     // needs rewriting
     editProgram: function(program) {
