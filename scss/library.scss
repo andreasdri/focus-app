@@ -2,15 +2,15 @@
   border: none!important;
   padding: 0px;
   background-color: white;
-  margin: 5px;
-  float: right!important;
+  margin: 0px 5px!important;
+  float: right;
+  min-width: 16px!important;
   min-height: 16px!important;
-  border: none;
 }
 .sound-title {
   display: inline-block;
   float: left;
 }
-.buttons {
-  display: inline-block;
-}
+// .item-complex .item-content, .item-radio .item-content {
+//   padding: 10px 70px 10px 16px!important;
+// }
