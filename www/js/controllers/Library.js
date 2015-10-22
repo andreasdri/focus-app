@@ -1,6 +1,6 @@
 angular.module('focus.controllers')
 	.controller('LibraryController', function($scope, AudioLibrary, AudioPlayer,
-     $rootScope, $state) {
+     $state) {
 
     $scope.sounds = AudioLibrary.getAllSounds();
   	$scope.setSound = function(trackNumber) {
