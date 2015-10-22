@@ -37,6 +37,8 @@ $base-background-color: #eaeaea !default;
 @import "motivation.scss";
 @import "edit-program.scss";
 
+@import 'library';
+
 td {
   text-align: center;
 }
