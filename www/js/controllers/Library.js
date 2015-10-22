@@ -1,5 +1,7 @@
 angular.module('focus.controllers')
-	.controller('LibraryController', function($scope, AudioLibrary, AudioPlayer, $state) {
+	.controller('LibraryController', function($scope, AudioLibrary, AudioPlayer,
+     $state) {
+
     $scope.sounds = AudioLibrary.getAllSounds();
   	$scope.setSound = function(trackNumber) {
   		AudioPlayer.setSound(trackNumber);
@@ -10,5 +12,10 @@ angular.module('focus.controllers')
     $scope.viewDetails = function(sound) {
       $state.go('main.library.chapterinfo',{'selectedSound': sound });
     };
-
+    $scope.addProgram = function(evt, sound) {
+      evt.stopPropagation();
+      $state.go('main.mytraining.addprogram',
+        {'selectedSound': sound, 'selectedCategory': sound.category}
+      );
+    }
   });
