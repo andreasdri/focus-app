@@ -59,12 +59,12 @@
 }
 
 .agenda-icon-add {
+  line-height: 45px!important;
   position: absolute;
-  left: 50%;
-  right: 50%;
-  font-size: 22px;
-  color: $dark;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  margin: auto;
 }
 
 .agenda-progress {
