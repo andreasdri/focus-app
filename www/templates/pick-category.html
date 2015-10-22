@@ -1,10 +1,10 @@
 <h4 class="category-heading">Hva vil du trene på?</h4>
 
-<button ng-repeat="category in parent.categories"
+<button ng-repeat="category in categories"
         class="button button-full button-stable"
-        ng-class="{ 'selected': parent.active.one === $index }"
-        ng-click="parent.toggleActive($index, 'one')">
+        ng-class="{ 'selected': category === selectedCategory }"
+        ng-click="toggleActiveCategory(category)">
   {{category.title}}
 </button>
 
-<p class="padding">{{parent.categories[parent.active.one].description}}</p>
+<p class="padding">{{selectedCategory.description}}</p>
