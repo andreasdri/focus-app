@@ -1,39 +1,41 @@
 angular.module('focus.controllers')
   .controller('AddProgramController', function($scope, $ionicSlideBoxDelegate,
-      SoundCategory, AudioLibrary) {
-    $scope.next = function() {
-      $ionicSlideBoxDelegate.next();
-    };
-    $scope.previous = function() {
-      $ionicSlideBoxDelegate.previous();
-    };
+      SoundCategory, AudioLibrary, $stateParams, soundsByCategoryFilter, $timeout) {
 
-    // Called each time the slide changes
-    $scope.slideChanged = function(index) {
-      $scope.slideIndex = index;
-      if (index == 1){
-        $scope.parent.active_1 = 0;
+    var getCategory = function(cat) {
+      for(var i = 0; i < $scope.categories.length; i++) {
+        if ($scope.categories[i].id == cat) {
+          $timeout(function() {
+            $ionicSlideBoxDelegate.$getByHandle('program').slide(1);
+          }, 200);
+          return $scope.categories[i];
+        }
       }
-    };
-
-    $scope.parent = {};
-    $scope.parent.categories = SoundCategory.getCategories();
-    $scope.parent.selected = {};
-
-    // Tracks index of page 1 and 2
-    $scope.parent.active = {
-      'one': 0,
-      'two': 0
-    }
-    $scope.parent.toggleActive = function(index, page) {
-      $scope.parent.active[page] = index;
-    };
-
-    $scope.sounds = AudioLibrary.getAllSounds();
-
-    $scope.filterCategory = function() {
-      return $scope.parent.categories[$scope.parent.active.one].id;
+      return null;
     }
 
+    var allSounds = AudioLibrary.getAllSounds();
+    $scope.categories = SoundCategory.getCategories();
+    $scope.selectedSound = $stateParams.selectedSound || allSounds[0];
+    $scope.selectedCategory = getCategory($stateParams.selectedCategory) || $scope.categories[0];
 
+    $scope.sounds = soundsByCategoryFilter(allSounds, $scope.selectedCategory);
+
+    $scope.toggleActiveCategory = function(category) {
+      $scope.selectedCategory = category;
+      $scope.sounds = soundsByCategoryFilter(allSounds, $scope.selectedCategory);
+      $scope.selectedSound = $scope.sounds[0];
+    };
+
+    $scope.toggleActiveSound = function(sound) {
+      $scope.selectedSound = sound;
+    };
+
+  })
+  .filter('soundsByCategory', function() {
+    return function(sounds, category) {
+      return sounds.filter(function(sound) {
+        return sound.category === category.id;
+      });
+    };
   });

@@ -4,13 +4,13 @@
       <h3>Dine lydspor</h3>
     </div>
     <ion-list>
-      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ui-sref="main.library.chapterinfo" ng-click="selectedSound(sound);">
+      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ng-click="viewDetails(sound)">
         <div class="sound-title">
           {{sound.title}}
         </div>
         <div class="buttons">
           <a class="button button-library icon ion-ios-play" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();"></a>
-          <a class="button button-library icon ion-ios-plus" ui-sref="main.mytraining.addprogram" ng-click="$event.stopPropagation();"></a>
+          <a class="button button-library icon ion-ios-plus" ng-click="addProgram($event, sound)"></a>
         </div>
       </ion-item>
     </ion-list>
