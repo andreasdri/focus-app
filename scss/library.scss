@@ -1,15 +1,16 @@
-.library-icon-button {
-  float: right;
-  min-height: 16px!important;
-  height: 16px;
-  padding: 0px;
-  border: none;
-
-}
 .button-library {
   border: none!important;
   padding: 0px;
   background-color: white;
-  height: 16px;
-  float: right;
+  margin: 5px;
+  float: right!important;
+  min-height: 16px!important;
+  border: none;
+}
+.sound-title {
+  display: inline-block;
+  float: left;
+}
+.buttons {
+  display: inline-block;
 }

@@ -1,19 +1,17 @@
 <ion-view view-title="Bibliotek" hide-back-button="true">
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <div>
-      <h2>Dine lydspor</h2>
+      <h3>Dine lydspor</h3>
     </div>
     <ion-list>
       <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ui-sref="main.library.chapterinfo" ng-click="selectedSound(sound);">
+        <div class="sound-title">
           {{sound.title}}
-        <button class="button-play button-library" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();">
-          <a class="button button-icon icon ion-ios-play library-icon-button"></a>
-          <!-- <i class="icon ion-ios-play"></i> -->
-        </button>
-        <button class="button-add button-library" ui-sref="main.mytraining.addprogram" ng-click="$event.stopPropagation();">
-          <a class="button button-icon icon ion-ios-plus library-icon-button"></a>
-          <!-- <i class="icon ion-ios-plus"></i> -->
-        </button>
+        </div>
+        <div class="buttons">
+          <a class="button button-library icon ion-ios-play" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();"></a>
+          <a class="button button-library icon ion-ios-plus" ui-sref="main.mytraining.addprogram" ng-click="$event.stopPropagation();"></a>
+        </div>
       </ion-item>
     </ion-list>
     </div>
