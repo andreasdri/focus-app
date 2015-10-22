@@ -12,9 +12,6 @@ angular.module('focus.controllers')
     $scope.viewDetails = function(sound) {
       $state.go('main.library.chapterinfo',{'selectedSound': sound });
     };
-    $scope.selectedSound = function(sound) {
-      $rootScope.select = sound;
-    }
     $scope.addProgram = function(evt, sound) {
       evt.stopPropagation();
       $state.go('main.mytraining.addprogram',
