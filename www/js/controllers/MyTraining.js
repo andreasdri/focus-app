@@ -88,7 +88,8 @@ angular.module('focus.controllers')
       title: 'Slett program',
       template: 'Er du sikker på at du vil slette dette programmet fra din trening?',
       cancelText: 'Nei',
-      okText: 'Ja'
+      okText: 'Ja',
+      okType: 'button-royal'
     });
 
     confirmPopup.then(function(res) {

@@ -10,7 +10,7 @@
 </style>
 
 <ion-modal-view>
-  <ion-header-bar class="bar-positive">
+  <ion-header-bar class="bar-royal">
     <h3 class="title">Player</h3>
 
     <div class="buttons">
@@ -18,16 +18,16 @@
     </div>
   </ion-header-bar>
   <ion-content class="padding" ng-controller="PlayerController">
-    <h4 class="big-player-heading padding-top">{{sound.title}}</h4>
+    <h3 class="big-player-heading padding-top">{{sound.title}}</h3>
 
     <p class="padding-top">{{sound.description}}</p>
     <audio-progress-bar class="padding-top"></audio-progress-bar>
-    <div class="button-bar button-bar-positive">
-      <button class="button button-positive button-icon icon ion-ios-rewind"
+    <div class="button-bar button-bar-royal">
+      <button class="button button-royal button-icon icon ion-ios-rewind"
          ng-click="prev()"></button>
-      <button class="button button-positive button-icon icon ion-ios-play" ng-click="playOrPause()"
+      <button class="button button-royal button-icon icon ion-ios-play" ng-click="playOrPause()"
          ng-class="isPlaying ? 'ion-ios-pause' : 'ion-ios-play'"></button>
-      <button class="button button-positive button-icon icon ion-ios-fastforward"
+      <button class="button button-royal button-icon icon ion-ios-fastforward"
          ng-click="next()"></button>
     </div>
   </ion-content>
