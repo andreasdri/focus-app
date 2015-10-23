@@ -9,6 +9,7 @@ angular.module('focus.directives')
         scope.playOrPause = function() {
             AudioPlayer.playOrPause();
         };
+
         scope.platform = ionic.Platform;
 
         // Make sure player is updated whenever a new sound is chosen

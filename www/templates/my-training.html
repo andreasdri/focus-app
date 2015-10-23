@@ -1,17 +1,26 @@
-<ion-view view-title="Min Trening" hide-back-button="true">
-  <ion-content padding="true" class="tabs-content has-header" ng-init="getPrograms()">
-    <div class="card agenda-card agenda-card-complete-{{program.completed}}" ng-repeat="program in programs track by $index">
-      <div class="item">
+<ion-view view-title="Min trening" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <a ui-sref="main.mytraining.addprogram" class="button button-clear">Legg til</a>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
+    <div class="card agenda-card" ng-repeat="program in programs">
+      <div class="agenda-item item">
+        <a class="agenda-icon-play icon ion-play"></a>
         <p class="agenda-title">{{program.name}}</p>
+        <div class="agenda-progress">
+          <span style="width: {{program.played*100/program.goal}}%"></span>
+        </div>
         <p class="agenda-progress-text">Fullført {{program.played}} av {{program.goal}} ganger</p>
-        <p class="agenda-bottom-text" ng-show="{{program.completed}}">Du har fullført dette programmet!</p>
-        <p class="agenda-bottom-text" ng-show="{{program.reminder}}">Neste - {{program.date}}, kl.{{program.time}}</p>
-        <a class="agenda-icon-reminder icon ion-ios-bell" ng-show="{{program.reminder}}"></a>
-        <a class="agenda-icon-top-right icon" ng-class="{'ion-ios-close' : program.completed, 'ion-edit' : !program.completed}"></a>
+        <p class="agenda-bottom-text" ng-show="{{program.reminder}}">{{program.date}}, kl.{{program.time}}</p>
+        <a class="agenda-icon-bottom-right icon ion-edit" ng-click="showEditProgram(program)"></a>
+        <a class="agenda-icon-top-right icon ion-close-round" ng-click="confirmDelete(program)"></a>
       </div>
     </div>
-    <a class="agenda-icon-add icon ion-ios-plus" ui-sref="main.mytraining.addprogram"></a>
-    <button ng-click="addProgram(exampleProgram)">ADD</button>
-    <button ng-click="clearPrograms()">CLEAR</button>
+    <div class="padding-bottom">
+      <a ui-sref="main.mytraining.addprogram"
+        class="agenda-icon-add button button-outline icon-left ion-plus-round button-royal">
+        Legg til program
+      </a>
+    </div>
   </ion-content>
 </ion-view>

@@ -39,6 +39,10 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
           templateUrl: 'templates/add-program.html',
           controller: 'AddProgramController'
         }
+      },
+      params: {
+        'selectedSound': null,
+        'selectedCategory': null
       }
     })
 
@@ -49,6 +53,9 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
         'mainContent@main': {
           templateUrl: 'templates/chapter-info.html'
         }
+      },
+      params: {
+        selectedSound: null
       }
     })
 
@@ -76,7 +83,7 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
       url : '/options',
       views: {
         'mainContent': {
-          templateUrl: 'templates/options.html',
+          templateUrl: 'templates/options.html'
         }
       }
     })

@@ -1,12 +1,12 @@
 <ion-view view-title="Legg til program">
-  <ion-slide-box on-slide-changed="slideChanged(index)">
+  <ion-slide-box delegate-handle="program">
     <ion-slide>
-      <ion-content padding="true" class="tabs-content has-header">
+      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
         <div ng-include="'templates/pick-category.html'"></div>
       </ion-content>
     </ion-slide>
     <ion-slide>
-      <ion-content padding="true" class="tabs-content has-header">
+      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
         <div ng-include="'templates/choose-program.html'"></div>
       </ion-content>
     </ion-slide>

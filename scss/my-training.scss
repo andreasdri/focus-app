@@ -4,25 +4,42 @@
   border-radius: 6px;
 }
 
-.agenda-card-complete-true {
-  border-top: 5px solid $balanced;
-}
-
-.agenda-card-complete-false {
-  border-top: 5px solid $energized;
+.agenda-item {
+  height: 100px!important;
 }
 
 .agenda-title {
-  font-size: 18px!important;
+  font-size: 20px!important;
+  position: absolute;
+  top: 15px;
+  left: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  height: 30px;
 }
 
 .agenda-bottom-text {
-  margin-top: 8px;
-  font-weight: 300;
+  position: absolute;
+  font-weight: 400;
+  left: 70px;
+  bottom: 10px;
 }
 
 .agenda-progress-text {
   font-size: 10px!important;
+  position: absolute;
+  top: 40px;
+  left: 71px;
+}
+
+.agenda-icon-play {
+  font-size: 48px;
+  color: $positive;
+  position: absolute;
+  top: 25px;
+  left: 20px;
 }
 
 .agenda-icon-top-right {
@@ -30,21 +47,59 @@
   top: 10px;
   right: 10px;
   font-size: 20px;
-  color: $dark;
+  color: $positive;
 }
 
-.agenda-icon-reminder {
+.agenda-icon-bottom-right {
   position: absolute;
-  bottom: 20px;
-  right: 10px;
+  bottom: 10px!important;
+  right: 8px!important;
   font-size: 22px;
-  color: $energized;
+  color: $positive;
 }
 
 .agenda-icon-add {
+  line-height: 45px!important;
   position: absolute;
-  right: 50%;
-  font-size: 22px;
-  color: $dark;
-  bottom: 1px;
+  left: 0;
+  right: 0;
+  width: 200px;
+  margin: auto;
+}
+
+.agenda-progress {
+  position:absolute;
+  top:35px;
+  left:70px;
+  height: 6px;
+  width: 200px;
+  background: #EF7F80;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.agenda-progress > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  background-image: linear-gradient(
+    center bottom,
+    #6AC5A6 37%,
+    #6AC5A6 69%
+  );
+  box-shadow:
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: absolute;
+  overflow: hidden;
+}
+
+.popup {
+  border-radius: 6px!important;
 }
