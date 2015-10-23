@@ -1,6 +1,7 @@
 angular.module('focus.controllers')
 	.controller('MyTrainingController', function($scope, $ionicPopup, TrainingProgram) {
     $scope.programs = [];
+    getPrograms();
 
     // section for testing ng-database
 
@@ -23,13 +24,11 @@ angular.module('focus.controllers')
       }
     };
 
-    $scope.programs.push($scope.exampleProgram);
-
-    $scope.getPrograms = function() {
+    function getPrograms() {
       TrainingProgram.getPrograms().then(function(result) {
         $scope.programs = result;
       });
-    };
+    }
 
     $scope.addProgram = function(program) {
         TrainingProgram.addProgram(program).then(function(result) {

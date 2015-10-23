@@ -3,7 +3,7 @@
     <a ui-sref="main.mytraining.addprogram" class="button button-clear">Legg til</a>
   </ion-nav-buttons>
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
-    <div class="card agenda-card" ng-repeat="program in programs">
+    <div class="card agenda-card" ng-repeat="program in programs track by $index">
       <div class="agenda-item item">
         <a class="agenda-icon-play icon ion-play"></a>
         <p class="agenda-title">{{program.name}}</p>
