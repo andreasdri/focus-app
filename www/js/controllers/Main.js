@@ -103,7 +103,7 @@ angular.module('focus.controllers')
       $scope.playerModal.remove();
       $scope.editProgramModal.remove();
     });
-    document.addEventListener('deviceready', Store.initializeStore, false);
+    document.addEventListener('deviceready', Store.initStore, false);
 
   });
 

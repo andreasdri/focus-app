@@ -4,40 +4,208 @@ angular.module('focus.services')
 
 
     var functions = {
-      initializeStore: function() {
 
-        // Let's set a pretty high verbosity level, so that we see a lot of stuff
-        // in the console (reassuring us that something is happening).
-        store.verbosity = store.INFO;
 
-        // We register a dummy product. It's ok, it shouldn't
-        // prevent the store "ready" event from firing.
+      initStore: function (){
+        console.log("Initializing Store")
+
+        if (!window.store) {
+          console.log('Store not available');
+          return;
+        }
+
+        var platform = device.platform.toLowerCase();
+        document.getElementsByTagName('body')[0].className = platform;
+
+        // Enable maximum logging level
+        store.verbosity = store.DEBUG;
+
+        // Enable remote receipt validation
+        store.validator = "https://api.fovea.cc:1982/check-purchase";
+
+
+        console.log('Register Products');
         store.register({
-          id:    "com.example.app.inappid1",
-          alias: "100 coins",
-          type:  store.CONSUMABLE
+          id:    'basic1', // id without package name!
+          alias: 'Kunsten å slappe av!',
+          type:   store.NON_CONSUMABLE
         });
 
-        // When every goes as expected, it's time to celebrate!
-        // The "ready" event should be welcomed with music and fireworks,
-        // go ask your boss about it! (just in case)
-        store.ready(function() {
-          console.log("\\o/ STORE READY \\o/");
+        store.register({
+          id:    'basic2', // id without package name!
+          alias: 'Om å sette seg mål',
+          type:   store.NON_CONSUMABLE
         });
 
-        // After we've done our setup, we tell the store to do
-        // it's first refresh. Nothing will happen if we do not call store.refresh()
-        store.refresh();
-
-        store.ready(function() {
-          console.log("\\o/ STORE READY \\o/");
+        store.register({
+          id:    'basic3', // id without package name!
+          alias: 'Den jeg er',
+          type:  store.NON_CONSUMABLE
         });
 
-        console.log(store.get("100 coins").alias)
+        store.register({
+          id:    'basic4', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+        store.register({
+          id:    'basic5', // id without package name!
+          alias: 'Kunsten å slappe av!',
+          type:   store.NON_CONSUMABLE
+        });
 
+        store.register({
+          id:    'basic6', // id without package name!
+          alias: 'Om å sette seg mål',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'basic7', // id without package name!
+          alias: 'Den jeg er',
+          type:  store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'basic8', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'basic9', // id without package name!
+          alias: 'Kunsten å slappe av!',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'basic10', // id without package name!
+          alias: 'Om å sette seg mål',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'basic11', // id without package name!
+          alias: 'Den jeg er',
+          type:  store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic1', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic2', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic3', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic4', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic5', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic6', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic7', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic8', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic9', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic10', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic11', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic12', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic13', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic14', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic15', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+        store.register({
+          id:    'olympic16', // id without package name!
+          alias: 'Mental tøffhet',
+          type:   store.NON_CONSUMABLE
+        });
+
+
+
+        var p = store.get("basic1");
+
+        p.owned = true;
+        
+        if(p.owned){
+          console.log("owned");
+        }
+        else console.log(("not owned"));
+
+      },
+
+      trackOwned: function(trackID) {
+        console.log(trackID)
+        var p = store.get(trackID);
+        return p.owned;
       }
-    };
+    }
 
     return functions;
 
-})
+  });
