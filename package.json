@@ -31,7 +31,8 @@
     "cordova-plugin-file",
     "cordova-plugin-file-transfer",
     "cordova-plugin-zip",
-    "cordova-plugin-transport-security"
+    "cordova-plugin-transport-security",
+    "cordova-sqlite-storage"
   ],
   "cordovaPlatforms": [
     "ios",
