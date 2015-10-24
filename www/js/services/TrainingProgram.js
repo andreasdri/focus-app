@@ -16,23 +16,15 @@ angular.module('focus.services')
       programsRepository.delete();
     },
 
-    // needs rewriting
-    editProgram: function(program) {
-      programs = programs.map(function(oldProgram) {
-        if (program.id === oldProgram.id) {
-          return program;
-        }
-      });
+    updateProgram: function(program, id) {
+      programsRepository.setBy({'id': id}).getOne;
+      return programsRepository.update(program);
     },
 
-    // also needs rewriting
-    deleteProgram: function(program) {
-      programs = programs.filter(function(oldProgram) {
-        if (!program.id === oldProgram.id) {
-          return oldProgram;
-        }
-      });
-    },
+    deleteProgram: function(id) {
+      programsRepository.setBy({'id': id}).getOne;
+      return programsRepository.delete();
+    }
 
   };
 });

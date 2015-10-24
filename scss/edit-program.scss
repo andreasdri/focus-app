@@ -10,20 +10,11 @@
   display: inline-block;
 }
 
-.edit-checkbox {
-  width: 150px!important;
-  border: 0;
-  height: 50px!important;
-}
-
-.left-box {
+.modal-buttons {
   position: absolute;
   left: 0;
-  width: 50%;
-}
-
-.right-box {
-  position: absolute;
   right: 0;
-  width: 50%;
+  width: 240px;
+  margin: auto;
+  padding: 20px;
 }

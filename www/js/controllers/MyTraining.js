@@ -25,7 +25,6 @@ angular.module('focus.controllers')
 
     TrainingProgram.getPrograms().then(function(result) {
       $scope.programs = result;
-      $scope.programs.push($scope.exampleProgram);
     });
 
     $scope.addProgram = function(program) {
@@ -40,7 +39,13 @@ angular.module('focus.controllers')
       $scope.programs = [];
     };
 
-    $scope.confirmDelete = function(exercise) {
+    $scope.editProgram = function() {
+      $scope.master = angular.copy($scope.selected);
+      TrainingProgram.updateProgram($scope.selected, $scope.selected.id);
+      $scope.hideEditProgram();
+    };
+
+    $scope.confirmDelete = function(program) {
       var confirmPopup = $ionicPopup.confirm({
         title: 'Slett program',
         template: 'Er du sikker på at du vil slette dette programmet fra din trening?',
@@ -51,6 +56,7 @@ angular.module('focus.controllers')
 
       confirmPopup.then(function(res) {
         if(res) {
+          TrainingProgram.deleteProgram(program.id);
           console.log('Slettet');
         } else {
           console.log('Ikke slettet');
