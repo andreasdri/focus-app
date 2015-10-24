@@ -10,12 +10,12 @@
     <p class="padding">{{sound.description}}</p>
     <div class="input-inline">
       <label>Hyppighet (ganger per uke)</label>
-      <input maxlength="2" min="0" type="number" value="{{selected.frequency}}"
+      <input maxlength="2" min="0" type="number" ng-model="selected.frequency"
         pattern="\d*">
     </div>
     <div class="input-inline padding-bottom">
       <label>Varighet (antall uker)</label>
-      <input maxlength="2" min="0" type="number" value="{{selected.duration}}"
+      <input maxlength="2" min="0" type="number" ng-model="selected.duration"
         pattern="\d*">
     </div>
     <div>
@@ -59,7 +59,7 @@
       </li>
     </ul>
 
-    <button class="button button-royal button-outline button-medium">
+    <button class="button button-royal button-outline button-medium" ng-click="addProgram(selected)">
       Legg til program
     </button>
 

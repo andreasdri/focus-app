@@ -1,6 +1,7 @@
 angular.module('focus.controllers')
   .controller('AddProgramController', function($scope, $ionicSlideBoxDelegate,
-      SoundCategory, AudioLibrary, $stateParams, soundsByCategoryFilter, $timeout) {
+      SoundCategory, AudioLibrary, $stateParams, soundsByCategoryFilter,
+      $timeout, TrainingProgram, $state) {
 
     var getCategory = function(cat) {
       for(var i = 0; i < $scope.categories.length; i++) {
@@ -30,6 +31,20 @@ angular.module('focus.controllers')
     $scope.toggleActiveSound = function(sound) {
       $scope.selectedSound = sound;
     };
+
+    $scope.addProgram = function(program) {
+      program.sound = $scope.selectedSound;
+      program.completed = false;
+      program.name = $scope.selectedSound.title;
+      program.reminder = true;
+      program.times = [];
+      program.played = 0;
+      TrainingProgram.addProgram(program).then(function(result) {
+        console.log(result.insertId);
+        $state.go('main.mytraining');
+      });
+
+    }
 
   })
   .filter('soundsByCategory', function() {

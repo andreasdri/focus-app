@@ -132,7 +132,8 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
     duration:  'NUMBER',
     frequency: 'NUMBER',
     completed: 'BOOLEAN',
-    checked:   'OBJECT'
+    checked:   'OBJECT',
+    sound:     'OBJECT'
   };
 
   ngdbProvider
