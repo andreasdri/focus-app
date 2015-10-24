@@ -39,6 +39,7 @@ angular.module('focus.controllers')
       program.reminder = true;
       program.times = [];
       program.played = 0;
+      console.log(program);
       TrainingProgram.addProgram(program).then(function(result) {
         console.log(result.insertId);
         $state.go('main.mytraining');

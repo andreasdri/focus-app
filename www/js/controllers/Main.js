@@ -73,8 +73,8 @@ angular.module('focus.controllers')
     });
 
     $scope.showEditProgram = function(program) {
-      $scope.selected = angular.copy(program);
-      $scope.master = angular.copy($scope.selected);
+      $scope.selectedProgram = angular.copy(program);
+      $scope.master = angular.copy($scope.selectedProgram);
       $scope.editProgramModal.show();
     };
 
@@ -83,7 +83,7 @@ angular.module('focus.controllers')
     };
 
     $scope.cancelEditProgram = function() {
-      $scope.selected = angular.copy($scope.master);
+      $scope.selectedProgram = angular.copy($scope.master);
       $scope.editProgramModal.hide();
     };
 

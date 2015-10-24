@@ -40,8 +40,8 @@ angular.module('focus.controllers')
     };
 
     $scope.editProgram = function() {
-      $scope.master = angular.copy($scope.selected);
-      TrainingProgram.updateProgram($scope.selected, $scope.selected.id);
+      $scope.master = angular.copy($scope.selectedProgram);
+      TrainingProgram.updateProgram($scope.selectedProgram, $scope.selectedProgram.id);
       $scope.hideEditProgram();
     };
 
