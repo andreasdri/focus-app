@@ -39,6 +39,7 @@ angular.module('focus.controllers')
       $ionicScrollDelegate.resize();
     };
 
+    /* Big Player Modal */
     $scope.mediaPlaying = function() {
       var conditional = (AudioPlayer.getMedia() != null)
       $rootScope.mediaPlaying = conditional;
@@ -61,20 +62,36 @@ angular.module('focus.controllers')
       $scope.playerModal.hide();
     };
 
+
+    /* Edit Program Modal */
     $ionicModal.fromTemplateUrl('templates/edit-program.html', {
       scope: $scope,
       controller: 'MyTrainingController',
       animation: 'slide-in-up'
     }).then(function(modal) {
-      $scope.editProgram = modal;
+      $scope.editProgramModal = modal;
     });
-    $scope.showEditProgram = function(exercise) {
-      $scope.selected = exercise;
-      $scope.editProgram.show();
+
+    $scope.showEditProgram = function(program) {
+      $scope.selected = angular.copy(program);
+      $scope.master = angular.copy($scope.selected);
+      $scope.editProgramModal.show();
     };
+
     $scope.hideEditProgram = function() {
-      $scope.editProgram.hide();
+      $scope.editProgramModal.hide();
     };
+
+    $scope.cancelEditProgram = function() {
+      $scope.selected = angular.copy($scope.master);
+      $scope.editProgramModal.hide();
+    };
+
+    $scope.$on('$destroy', function() {
+      $scope.playerModal.remove();
+      $scope.editProgramModal.remove();
+    });
+
   });
 
 
