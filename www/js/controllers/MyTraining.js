@@ -1,109 +1,60 @@
 angular.module('focus.controllers')
-.controller('MyTrainingController', function($scope, $ionicPopup) {
+	.controller('MyTrainingController', function($scope, $ionicPopup, TrainingProgram) {
+    $scope.programs = [];
 
-  $scope.exercises = [
-    {
-      name: "Konkurranseforberedelser",
-      date: null,
-      time: null,
+    // section for testing ng-database
+
+    $scope.exampleProgram = {
+      name: "Eksempelprogram",
       reminder: false,
-      played: 3,
-      goal: 3,
-      frequency: 5,
-      duration: 2,
-      checked: {
-        mon: false,
-        tue: false,
-        wed: false,
-        thu: false,
-        fri: false,
-        sat: false,
-        sun: false,
-      }
-    },
-
-    {
-      name: "Timeout",
-      date: "Onsdag",
-      time: "21:00",
-      reminder: true,
+      times: [],
       played: 1,
-      goal: 3,
-      frequency: 1,
       duration: 3,
-      checked: {
-        mon: false,
-        tue: false,
-        wed: true,
-        thu: false,
-        fri: false,
-        sat: false,
-        sun: false,
-      }
-    },
-
-    {
-      name: "Mental tøffhet",
-      date: null,
-      time: null,
-      reminder: false,
-      played: 0,
-      goal: 4,
-      frequency: 5,
-      duration: 1,
-      checked: {
-        mon: false,
-        tue: false,
-        wed: false,
-        thu: false,
-        fri: false,
-        sat: false,
-        sun: false,
-      }
-    },
-
-    {
-      name: "Om å sette seg mål",
-      date: "Fredag",
-      time: "12:00",
-      reminder: true,
-      played: 0,
-      goal: 2,
       frequency: 3,
-      duration: 3,
+      completed: false,
       checked: {
         mon: false,
         tue: true,
         wed: false,
         thu: false,
-        fri: true,
+        fri: false,
         sat: false,
-        sun: true,
+        sun: false,
       }
-    }
-  ];
+    };
 
-  $scope.confirmDelete = function(exercise) {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Slett program',
-      template: 'Er du sikker på at du vil slette dette programmet fra din trening?',
-      cancelText: 'Nei',
-      okText: 'Ja',
-      okType: 'button-royal'
+    TrainingProgram.getPrograms().then(function(result) {
+      $scope.programs = result;
+      $scope.programs.push($scope.exampleProgram);
     });
 
-    confirmPopup.then(function(res) {
-      if(res) {
-        $scope.deleteExercise(exercise);
-        console.log('Slettet');
-      } else {
-        console.log('Ikke slettet');
-        }
+    $scope.addProgram = function(program) {
+        TrainingProgram.addProgram(program).then(function(result) {
+        console.log(result.insertId);
+        $scope.programs.push(program);
       });
     };
 
-  $scope.deleteExercise = function(exercise) {
-    $scope.exercises.splice($scope.exercises.indexOf(exercise), 1);
-  };
+    $scope.clearPrograms = function() {
+      TrainingProgram.clear();
+      $scope.programs = [];
+    };
 
+    $scope.confirmDelete = function(exercise) {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Slett program',
+        template: 'Er du sikker på at du vil slette dette programmet fra din trening?',
+        cancelText: 'Nei',
+        okText: 'Ja',
+        okType: 'button-royal'
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('Slettet');
+        } else {
+          console.log('Ikke slettet');
+          }
+        });
+    };
 });
