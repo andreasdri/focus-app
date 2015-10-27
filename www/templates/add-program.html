@@ -1,14 +1,17 @@
 <ion-view view-title="Legg til program">
-  <ion-slide-box delegate-handle="program">
+  <ion-slide-box delegate-handle="program" show-pager="false" on-slide-changed="slideChanged()">
     <ion-slide>
-      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
+      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}" on-slide-changed="slideChanged()">
         <div ng-include="'templates/pick-category.html'"></div>
       </ion-content>
     </ion-slide>
     <ion-slide>
-      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
+      <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}" on-slide-changed="slideChanged()">
         <div ng-include="'templates/choose-program.html'"></div>
       </ion-content>
     </ion-slide>
   </ion-slide-box>
+  <div ng-class="platform.isAndroid() ? 'progress-bar-android' : 'progress-bar-other'">
+    <div class="increment"></div>
+  </div>
 </ion-view>

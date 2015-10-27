@@ -39,6 +39,7 @@ body {
 
 .datepicker li {
   display: inline-block!important;
+  width: 150px;
 }
 
 .edit-checkbox.item {
@@ -47,5 +48,32 @@ body {
 }
 
 .edit-checkbox.item-checkbox {
-  padding-left: 50px!important;
+  padding-left: 20px!important;
+  border: 0 !important;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: $stable;
+  position: absolute;
+}
+
+.progress-bar-android {
+  @extend .progress-bar;
+  top: 93px;
+}
+
+.progress-bar-other {
+  @extend .progress-bar;
+  top: 44px;
+}
+
+.increment {
+  width: 50%;
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  background: #A6D7E7;
+  -webkit-transition: all .75s;
 }

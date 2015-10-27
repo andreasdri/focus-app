@@ -1,7 +1,7 @@
 angular.module('focus.controllers')
   .controller('AddProgramController', function($scope, $ionicSlideBoxDelegate,
       SoundCategory, AudioLibrary, $stateParams, soundsByCategoryFilter,
-      $timeout, TrainingProgram, $state) {
+      $timeout, TrainingProgram, $state, $document) {
 
     var getCategory = function(cat) {
       for(var i = 0; i < $scope.categories.length; i++) {
@@ -45,7 +45,18 @@ angular.module('focus.controllers')
         $state.go('main.mytraining');
       });
 
-    }
+    };
+
+    $scope.slideChanged = function() {
+      var index = $ionicSlideBoxDelegate.$getByHandle('program').currentIndex();
+      var slides = $ionicSlideBoxDelegate.$getByHandle('program').slidesCount();
+      var increment = $document[0].querySelectorAll('div.increment');
+      increment[0].style.left = (((1+index)/slides)*100)-50+'%';
+      if (typeof(increment[1]) != 'undefined') {
+        increment[1].style.left = (((1+index)/slides)*100)-50+'%';
+      }
+      $ionicSlideBoxDelegate.$getByHandle('program').update();
+    };
 
   })
   .filter('soundsByCategory', function() {
