@@ -24,6 +24,37 @@ angular.module('focus.controllers')
       }
     };
 
+    $scope.nextTraining = function(times) {
+      if (!times) {
+        return '';
+      }
+      for (var i = 0; i < times.length; i++) {
+        var exercise = times[i];
+
+        if (moment(exercise.time) >= moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0})
+          && !exercise.finished) {
+          return moment(exercise.time).calendar(null, {
+            sameDay: '[I dag]',
+            nextDay: '[I morgen]',
+            nextWeek: 'dddd D. MMMM YYYY'
+          });
+        }
+      }
+    };
+
+    $scope.numberOfTimesPlayed = function(times) {
+      if(!times) {
+        return 0;
+      }
+      return times.reduce(function(time) {
+        return time.finished ? 1 : 0;
+      });
+    };
+
+    $scope.progressPercentage = function(times) {
+      return $scope.numberOfTimesPlayed(times) * 100 / times.length;
+    }
+
 
     TrainingProgram.getPrograms().then(function(result) {
       $scope.programs = result;
