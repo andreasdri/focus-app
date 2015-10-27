@@ -1,18 +1,15 @@
 <h3 class="category-heading">Velg program</h3>
 
 <div ng-repeat="sound in sounds">
-  <button class="button button-full button-stable"
+  <button class="button button-category button-stable"
         ng-class="{ 'selected': sound === selectedSound }"
         ng-click="toggleActiveSound(sound)">
     {{sound.title}}
   </button>
   <div class="padding-bottom" ng-if="sound === selectedSound">
-    <p class="padding">{{sound.description}}</p>
-    <div class="input-inline">
-      <label>Hyppighet (ganger per uke)</label>
-      <input maxlength="2" min="0" type="number" ng-model="selected.frequency"
-        pattern="\d*">
-    </div>
+    <a class="button button-category-info icon ion-ios-information" ng-click="showProgramInfo();">
+      Informasjon om programmet
+    </a>
     <div class="input-inline padding-bottom">
       <label>Varighet (antall uker)</label>
       <input maxlength="2" min="0" type="number" ng-model="selected.duration"
@@ -23,39 +20,39 @@
     </div>
     <ul class="datepicker padding">
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.mon">
-          Mandag
-        </ion-checkbox>
+        <label class="day-checkbox-mon">
+          <input type="checkbox" ng-model="selected.checked.mon">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.tue">
-          Tirsdag
-        </ion-checkbox>
+        <label class="day-checkbox-tue">
+          <input type="checkbox" ng-model="selected.checked.tue">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.wed">
-          Onsdag
-        </ion-checkbox>
+        <label class="day-checkbox-wed">
+          <input type="checkbox" ng-model="selected.checked.wed">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.thu">
-          Torsdag
-        </ion-checkbox>
+        <label class="day-checkbox-thu">
+          <input type="checkbox" ng-model="selected.checked.thu">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.fri">
-          Fredag
-        </ion-checkbox>
+        <label class="day-checkbox-fri">
+          <input type="checkbox" ng-model="selected.checked.fri">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.sat">
-          Lørdag
-        </ion-checkbox>
+        <label class="day-checkbox-sat">
+          <input type="checkbox" ng-model="selected.checked.sat">
+        </label>
       </li>
       <li>
-        <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selected.checked.sun">
-          Søndag
-        </ion-checkbox>
+        <label class="day-checkbox-sun">
+          <input type="checkbox" ng-model="selected.checked.sun">
+        </label>
       </li>
     </ul>
 
@@ -65,4 +62,3 @@
 
   </div>
 </div>
-

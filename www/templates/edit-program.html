@@ -5,11 +5,6 @@
   <ion-content class="padding" ng-controller="MyTrainingController">
     <div class="padding-bottom text-center">
       <h3 class="big-player-heading padding-top">{{selectedProgram.name}}</h3>
-      <div class="input-inline">
-        <label>Hyppighet (ganger per uke)</label>
-        <input maxlength="2" min="0" type="number" ng-model="selectedProgram.frequency"
-          pattern="\d*">
-      </div>
       <div class="input-inline padding-bottom">
         <label>Varighet (antall uker)</label>
         <input maxlength="2" min="0" type="number" ng-model="selectedProgram.duration"
@@ -19,42 +14,42 @@
         <label>Varsel: På en dag</label>
       </div>
         <ul class="datepicker padding">
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.mon">
-            Mandag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.tue">
-            Tirsdag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.wed">
-            Onsdag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.thu">
-            Torsdag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.fri">
-            Fredag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.sat">
-            Lørdag
-          </ion-checkbox>
-        </li>
-        <li>
-          <ion-checkbox class="edit-checkbox checkbox-royal" ng-model="selectedProgram.checked.sun">
-            Søndag
-          </ion-checkbox>
-        </li>
-      </ul>
+          <li>
+            <label class="day-checkbox-mon">
+              <input type="checkbox" ng-model="selectedProgram.checked.mon">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-tue">
+              <input type="checkbox" ng-model="selectedProgram.checked.tue">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-wed">
+              <input type="checkbox" ng-model="selectedProgram.checked.wed">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-thu">
+              <input type="checkbox" ng-model="selectedProgram.checked.thu">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-fri">
+              <input type="checkbox" ng-model="selectedProgram.checked.fri">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-sat">
+              <input type="checkbox" ng-model="selectedProgram.checked.sat">
+            </label>
+          </li>
+          <li>
+            <label class="day-checkbox-sun">
+              <input type="checkbox" ng-model="selectedProgram.checked.sun">
+            </label>
+          </li>
+        </ul>
       <div class="modal-buttons">
         <a ng-click="cancelEditProgram()"
           class=" button button-outline icon-left ion-close-round button-royal">

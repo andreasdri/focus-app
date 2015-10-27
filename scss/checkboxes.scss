@@ -1,0 +1,115 @@
+.day-checkbox[type=checkbox] {
+    position: relative;
+    visibility: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.day-checkbox[type=checkbox]:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: visible;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 10px;
+    background: $stable;
+    color: #aaa;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.day-checkbox[type=checkbox]:checked:after {
+    content: "";
+    color: #fff;
+    background: $royal;
+}
+
+.day-checkbox-mon input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-mon input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "Ma";
+}
+.day-checkbox-mon input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "Ma";
+}
+
+.day-checkbox-tue input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-tue input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "Ti";
+}
+.day-checkbox-tue input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "Ti";
+}
+
+.day-checkbox-wed input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-wed input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "On";
+}
+.day-checkbox-wed input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "On";
+}
+
+.day-checkbox-thu input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-thu input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "To";
+}
+.day-checkbox-thu input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "To";
+}
+
+.day-checkbox-fri input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-fri input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "Fr";
+}
+.day-checkbox-fri input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "Fr";
+}
+
+.day-checkbox-sat input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-sat input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "Lø";
+}
+.day-checkbox-sat input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "Lø";
+}
+
+.day-checkbox-sun input[type=checkbox] {
+    @extend .day-checkbox[type=checkbox];
+}
+.day-checkbox-sun input[type=checkbox]:after {
+    @extend .day-checkbox[type=checkbox]:after;
+    content: "Sø";
+}
+.day-checkbox-sun input[type=checkbox]:checked:after {
+    @extend .day-checkbox[type=checkbox]:checked:after;
+    content: "Sø";
+}

@@ -1,10 +1,12 @@
 <h3 class="category-heading">Hva vil du trene på?</h3>
 
-<button ng-repeat="category in categories"
-        class="button button-full button-stable"
-        ng-class="{ 'selected': category === selectedCategory }"
-        ng-click="toggleActiveCategory(category)">
-  {{category.title}}
-</button>
-
-<p class="padding">{{selectedCategory.description}}</p>
+<div ng-repeat="category in categories">
+  <button class="button button-category button-stable"
+          ng-class="{ 'selected': category === selectedCategory }"
+          ng-click="toggleActiveCategory(category)">
+    {{category.title}}
+  </button>
+  <a class="button button-category-info icon ion-ios-information" ng-click="showCategoryInfo();" ng-if="category === selectedCategory">
+    Informasjon om kategorien
+  </a>
+</div>
