@@ -39,6 +39,7 @@ body {
 
 .datepicker li {
   display: inline-block!important;
+  width: 150px;
 }
 
 .edit-checkbox.item {
@@ -48,4 +49,5 @@ body {
 
 .edit-checkbox.item-checkbox {
   padding-left: 50px!important;
+  border: 0 !important;
 }
