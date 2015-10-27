@@ -12,7 +12,7 @@ angular.module('focus.controllers')
     $scope.viewDetails = function(sound) {
       $state.go('main.library.chapterinfo',{'selectedSound': sound });
     };
-    
+
     $scope.addProgram = function(evt, sound) {
       evt.stopPropagation();
       $state.go('main.mytraining.addprogram',
@@ -22,6 +22,10 @@ angular.module('focus.controllers')
 
     $scope.checkTrack = function(trackID) {
       return Store.trackOwned(trackID);
-    }
+    };
 
+    $scope.purchaseTrack = function () {
+
+      Store.purchaseTrack("basic2");
+    };
   });

@@ -14,6 +14,7 @@ angular.module('focus.services')
           return;
         }
 
+
         var platform = device.platform.toLowerCase();
         document.getElementsByTagName('body')[0].className = platform;
 
@@ -22,6 +23,8 @@ angular.module('focus.services')
 
         // Enable remote receipt validation
         store.validator = "https://api.fovea.cc:1982/check-purchase";
+
+        store.refresh();
 
 
         console.log('Register Products');
@@ -189,22 +192,50 @@ angular.module('focus.services')
 
 
         var p = store.get("basic1");
-
         p.owned = true;
-        
+
+
         if(p.owned){
           console.log("owned");
         }
         else console.log(("not owned"));
 
+
+        store.refresh();
+
       },
 
+      /*
+      Checks if the track with ID: trackID is owned by the user
+       */
       trackOwned: function(trackID) {
-        console.log(trackID)
         var p = store.get(trackID);
         return p.owned;
+      },
+
+      /*
+      Purchases the track with ID: trackID
+       */
+      purchaseTrack: function(trackID) {
+        var p = store.get(trackID);
+        console.log("Purchasing track", trackID);
+
+        store.order(p);
+
+        store.when('product').approved(function(product) {
+
+          console.log("purchased!")
+          product.finish();
+
+          store.refresh();
+        });
+
+
       }
+
+
     }
+
 
     return functions;
 
