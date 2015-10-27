@@ -67,7 +67,7 @@ angular.module('focus.services')
       }
 
       return times.sort(function(a, b) {
-        return a.unix() - b.unix();
+        return a.time.unix() - b.time.unix();
       });
 
 
