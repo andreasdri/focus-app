@@ -57,7 +57,10 @@ angular.module('focus.services')
               // Add a week
               time = day.add(i * 7, 'days');
             }
-            times.push(time);
+            times.push({
+              time: time,
+              finished: false
+            });
 
           }
         }
