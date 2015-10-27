@@ -24,6 +24,50 @@ angular.module('focus.services')
     deleteProgram: function(id) {
       programsRepository.setBy({'id': id}).getOne;
       return programsRepository.delete();
+    },
+
+    addTimes: function(checked, frequency, duration) {
+      var days = {
+        'mon': 'mandag',
+        'tue': 'tirsdag',
+        'wed': 'onsdag',
+        'thu': 'torsdag',
+        'fri': 'fredag',
+        'sat': 'lørdag',
+        'sun': 'søndag'
+      };
+
+      var times = [];
+
+      for (var i = 0; i < duration; i++) {
+        for (var day in checked) {
+
+          // If the day in the current week is checked
+          if (checked.hasOwnProperty(day) && checked[day]) {
+
+            var time;
+            var day = moment().startOf('week').day(days[day]);
+
+            // If the day this week has passed, push a date to a new week at the end
+            if (i == 0 && moment().date() > day.date()) {
+              time = day.add(duration * 7, 'days');
+            }
+
+            else {
+              // Add a week
+              time = day.add(i * 7, 'days');
+            }
+            times.push(time);
+
+          }
+        }
+      }
+
+      return times.sort(function(a, b) {
+        return a.unix() - b.unix();
+      });
+
+
     }
 
   };
