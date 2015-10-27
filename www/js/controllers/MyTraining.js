@@ -1,5 +1,6 @@
 angular.module('focus.controllers')
-	.controller('MyTrainingController', function($scope, $ionicPopup, TrainingProgram) {
+	.controller('MyTrainingController', function($scope, $ionicPopup,
+    TrainingProgram, AudioPlayer) {
     $scope.programs = [];
 
     // section for testing ng-database
@@ -23,6 +24,7 @@ angular.module('focus.controllers')
       }
     };
 
+
     TrainingProgram.getPrograms().then(function(result) {
       $scope.programs = result;
     });
@@ -32,6 +34,12 @@ angular.module('focus.controllers')
         console.log(result.insertId);
         $scope.programs.push(program);
       });
+    };
+
+    $scope.playProgram = function(program) {
+      AudioPlayer.setSound(program.sound.trackNumber);
+      AudioPlayer.play();
+      $scope.showPlayer();
     };
 
     $scope.clearPrograms = function() {
