@@ -5,7 +5,7 @@
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <div class="card agenda-card" ng-repeat="program in programs track by $index">
       <div class="agenda-item item">
-        <a class="agenda-icon-play icon ion-play"></a>
+        <a class="agenda-icon-play icon ion-play" ng-click="playProgram(program)"></a>
         <p class="agenda-title">{{program.name}}</p>
         <div class="agenda-progress">
           <span style="width: {{program.played*100/program.goal}}%"></span>
