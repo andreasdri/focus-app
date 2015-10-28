@@ -7,9 +7,12 @@
     {{sound.title}}
   </button>
   <div class="padding-bottom" ng-if="sound === selectedSound">
-    <a class="button button-category-info icon ion-ios-information" ng-click="showProgramInfo();">
+    <a class="button button-category-info icon ion-ios-information" ng-click="toggleProgramInfo();">
       Informasjon om programmet
     </a>
+    <div ng-if="showProgramInfo && (sound === selectedSound)">
+      <p class="padding">{{sound.description}}</p>
+    </div>
     <div class="input-inline padding-bottom">
       <label>Varighet (antall uker)</label>
       <input maxlength="2" min="0" type="number" ng-model="selected.duration"

@@ -6,7 +6,10 @@
           ng-click="toggleActiveCategory(category)">
     {{category.title}}
   </button>
-  <a class="button button-category-info icon ion-ios-information" ng-click="showCategoryInfo();" ng-if="category === selectedCategory">
+  <a class="button button-category-info icon ion-ios-information" ng-click="toggleCategoryInfo();" ng-if="category === selectedCategory">
     Informasjon om kategorien
   </a>
+  <div ng-if="showCategoryInfo && (category === selectedCategory)">
+    <p class="padding">{{selectedCategory.description}}</p>
+  </div>
 </div>

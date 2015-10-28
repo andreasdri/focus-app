@@ -22,6 +22,8 @@ angular.module('focus.controllers')
 
     $scope.sounds = soundsByCategoryFilter(allSounds, $scope.selectedCategory);
     $scope.slideIndex = 0;
+    $scope.showCategoryInfo = false;
+    $scope.showProgramInfo = false;
 
     $scope.toggleActiveCategory = function(category) {
       $scope.selectedCategory = category;
@@ -68,32 +70,12 @@ angular.module('focus.controllers')
 
     };
 
-    $scope.showCategoryInfo = function() {
-      var categoryPopup = $ionicPopup.show({
-        template: '<style>.popup-title { font-size:16px; }</style><p class="padding">{{selectedCategory.description}}</p>',
-        title: $scope.selectedCategory.title,
-        scope: $scope,
-        buttons: [
-          {
-            text: '<b>OK</b>',
-            type: 'button-royal',
-          }
-        ]
-      });
+    $scope.toggleCategoryInfo = function() {
+      $scope.showCategoryInfo = !$scope.showCategoryInfo;
      };
 
-    $scope.showProgramInfo = function() {
-      var programPopup = $ionicPopup.show({
-        template: '<style>.popup-title { font-size:16px; }</style><p class="padding">{{sound.description}}</p>',
-        title: $scope.selectedSound.title,
-        scope: $scope,
-        buttons: [
-          {
-            text: '<b>OK</b>',
-            type: 'button-royal',
-          }
-        ]
-      });
+    $scope.toggleProgramInfo = function() {
+      $scope.showProgramInfo = !$scope.showProgramInfo;
      };
   })
   .filter('soundsByCategory', function() {
