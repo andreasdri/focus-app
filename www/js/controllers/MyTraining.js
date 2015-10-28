@@ -60,22 +60,10 @@ angular.module('focus.controllers')
       $scope.programs = result;
     });
 
-    $scope.addProgram = function(program) {
-        TrainingProgram.addProgram(program).then(function(result) {
-        console.log(result.insertId);
-        $scope.programs.push(program);
-      });
-    };
-
     $scope.playProgram = function(program) {
       AudioPlayer.setSound(program.sound.trackNumber);
       AudioPlayer.play();
       $scope.showPlayer();
-    };
-
-    $scope.clearPrograms = function() {
-      TrainingProgram.clear();
-      $scope.programs = [];
     };
 
     $scope.editProgram = function() {
