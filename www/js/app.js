@@ -123,6 +123,7 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
 // preliminary data structure for a program
 
 .config(function(ngdbProvider) {
+
   var programsRepository = {
     id:        'ID',
     name:      'STRING',
@@ -142,6 +143,8 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
 
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
+
+    moment.locale('nb');
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
