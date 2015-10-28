@@ -72,7 +72,8 @@ angular.module('focus.controllers')
       $scope.editProgramModal = modal;
     });
 
-    $scope.showEditProgram = function(program) {
+    $scope.showEditProgram = function(program, evt) {
+      evt.stopPropagation(); evt.preventDefault();
       $scope.selectedProgram = angular.copy(program);
       $scope.master = angular.copy($scope.selectedProgram);
       $scope.editProgramModal.show();

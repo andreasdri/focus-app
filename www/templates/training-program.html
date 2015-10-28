@@ -1,0 +1,15 @@
+<ion-view view-title="Treningsprogram">
+  <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
+    <div class="item item-text-wrap">
+      <h3 class="padding-top">{{program.name}}</h3>
+      <p class="padding-top">{{program.sound.description}}</p>
+      <div ng-repeat="exercise in program.times">
+        <p>{{exercise.time}}</p>
+      </div>
+      <p>Antall ganger igjen:</p>
+      <button class="button">Endre</button>
+      <button class="button">Slett</button>
+      <button class="button">Spill av</button>
+    </div>
+  </ion-content>
+</ion-view>

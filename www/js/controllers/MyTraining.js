@@ -1,6 +1,6 @@
 angular.module('focus.controllers')
 	.controller('MyTrainingController', function($scope, $ionicPopup,
-    TrainingProgram, AudioPlayer) {
+    TrainingProgram, AudioPlayer, $state) {
     $scope.programs = [];
 
     // section for testing ng-database
@@ -23,6 +23,10 @@ angular.module('focus.controllers')
         sun: false,
       }
     };
+
+    $scope.showProgram = function(program) {
+      $state.go('main.mytraining.program', {program: program});
+    }
 
     $scope.nextTraining = function(times) {
       if (!times) {
@@ -76,7 +80,8 @@ angular.module('focus.controllers')
       $scope.hideEditProgram();
     };
 
-    $scope.confirmDelete = function(program) {
+    $scope.confirmDelete = function(program, evt) {
+      evt.stopPropagation(); evt.preventDefault();
       var confirmPopup = $ionicPopup.confirm({
         title: 'Slett program',
         template: 'Er du sikker på at du vil slette dette programmet fra din trening?',
