@@ -8,10 +8,14 @@
         <a class="agenda-icon-play icon ion-play" ng-click="playProgram(program)"></a>
         <p class="agenda-title">{{program.name}}</p>
         <div class="agenda-progress">
-          <span style="width: {{program.played*100/program.goal}}%"></span>
+          <span style="width: {{}}%"></span>
         </div>
-        <p class="agenda-progress-text">Fullført {{program.played}} av {{program.goal}} ganger</p>
-        <p class="agenda-bottom-text" ng-show="{{program.reminder}}">{{program.date}}, kl.{{program.time}}</p>
+        <p class="agenda-progress-text">Fullført
+          {{numberOfTimesPlayed(program.times)}} av {{program.times.length}} ganger
+        </p>
+        <p class="agenda-bottom-text" ng-show="{{program.reminder}}">
+          Neste: {{nextTraining(program.times)}}
+        </p>
         <a class="agenda-icon-bottom-right icon ion-edit" ng-click="showEditProgram(program)"></a>
         <a class="agenda-icon-top-right icon ion-close-round" ng-click="confirmDelete(program)"></a>
       </div>
