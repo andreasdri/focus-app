@@ -79,6 +79,10 @@ angular.module('focus.controllers')
     };
 
     $scope.editProgram = function() {
+      $scope.selectedProgram.times = TrainingProgram.addTimes(
+        $scope.selectedProgram.checked,
+        $scope.selectedProgram.frequency,
+        $scope.selectedProgram.duration);
       $scope.master = angular.copy($scope.selectedProgram);
       TrainingProgram.updateProgram($scope.selectedProgram, $scope.selectedProgram.id);
       $scope.hideEditProgram();
