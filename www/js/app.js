@@ -42,7 +42,8 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
       },
       params: {
         'selectedSound': null,
-        'selectedCategory': null
+        'selectedCategory': null,
+        'addFromLibrary': null
       }
     })
 

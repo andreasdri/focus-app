@@ -39,15 +39,15 @@ body {
 
 .datepicker li {
   display: inline-block!important;
-  width: 150px;
 }
 
-.edit-checkbox.item {
-  font-size: 14px!important;
-  padding: 10px!important;
+.button-category {
+  display: inline-block;
+  width: 80%;
+  margin: 5px 5px;
 }
 
-.edit-checkbox.item-checkbox {
-  padding-left: 50px!important;
-  border: 0 !important;
+.button-category-info {
+  @extend .button-library;
+  float: none!important;
 }

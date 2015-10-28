@@ -1,5 +1,11 @@
-<ion-view view-title="Legg til program">
-  <ion-slide-box delegate-handle="program">
+<ion-view view-title="Legg til program" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a ng-click="goBack();" class="button button-clear">Tilbake</a>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <a ng-click="nextSlide();" class="button button-clear" ng-show="slideIndex == 0">Neste</a>
+  </ion-nav-buttons>
+  <ion-slide-box delegate-handle="program" on-slide-changed="slideChanged(index)">
     <ion-slide>
       <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
         <div ng-include="'templates/pick-category.html'"></div>
