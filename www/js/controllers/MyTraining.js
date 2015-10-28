@@ -42,17 +42,8 @@ angular.module('focus.controllers')
       }
     };
 
-    $scope.numberOfTimesPlayed = function(times) {
-      if(!times) {
-        return 0;
-      }
-      return times.reduce(function(time) {
-        return time.finished ? 1 : 0;
-      });
-    };
-
-    $scope.progressPercentage = function(times) {
-      return $scope.numberOfTimesPlayed(times) * 100 / times.length;
+    $scope.progressPercentage = function(program) {
+      return program.played * 100 / program.times.length;
     }
 
 
@@ -63,7 +54,8 @@ angular.module('focus.controllers')
     $scope.playProgram = function(program) {
       AudioPlayer.setSound(program.sound.trackNumber);
       AudioPlayer.play();
-      program.
+      program.played = program.played + 1;
+      TrainingProgram.updateProgram(program, program.id);
       $scope.showPlayer();
     };
 
