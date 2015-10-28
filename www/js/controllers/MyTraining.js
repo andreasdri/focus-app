@@ -54,7 +54,15 @@ angular.module('focus.controllers')
     $scope.playProgram = function(program) {
       AudioPlayer.setSound(program.sound.trackNumber);
       AudioPlayer.play();
-      program.played = program.played + 1;
+
+      if (program.played < program.times.length) {
+        program.played = program.played + 1;
+
+        if (program.played === program.times.length) {
+          program.finished = true;
+        }
+      }
+
       TrainingProgram.updateProgram(program, program.id);
       $scope.showPlayer();
     };
