@@ -24,6 +24,7 @@ angular.module('focus.controllers')
     $scope.slideIndex = 0;
     $scope.showCategoryInfo = false;
     $scope.showProgramInfo = false;
+    $scope.addFromLibrary = $stateParams.addFromLibrary || false;
 
     $scope.toggleActiveCategory = function(category) {
       $scope.selectedCategory = category;
@@ -43,7 +44,7 @@ angular.module('focus.controllers')
     };
 
     $scope.goBack = function() {
-      if ($scope.slideIndex === 0) {
+      if ($scope.slideIndex === 0 || $scope.addFromLibrary) {
         $ionicHistory.goBack();
       }
       else {

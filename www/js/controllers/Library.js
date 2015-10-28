@@ -15,7 +15,7 @@ angular.module('focus.controllers')
     $scope.addProgram = function(evt, sound) {
       evt.stopPropagation();
       $state.go('main.mytraining.addprogram',
-        {'selectedSound': sound, 'selectedCategory': sound.category}
+        {'selectedSound': sound, 'selectedCategory': sound.category, 'addFromLibrary': true}
       );
     }
   });
