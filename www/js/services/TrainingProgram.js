@@ -26,7 +26,7 @@ angular.module('focus.services')
       return programsRepository.delete();
     },
 
-    addTimes: function(checked, frequency, duration) {
+    addTimes: function(checked, duration) {
       var days = {
         'mon': 'mandag',
         'tue': 'tirsdag',

@@ -37,7 +37,7 @@ angular.module('focus.controllers')
       program.completed = false;
       program.name = $scope.selectedSound.title;
       program.reminder = true;
-      program.times = TrainingProgram.addTimes(program.checked, program.frequency, program.duration);
+      program.times = TrainingProgram.addTimes(program.checked, program.duration);
       program.played = 0;
 
       TrainingProgram.addProgram(program).then(function(result) {
