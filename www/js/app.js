@@ -132,7 +132,6 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
     times:     'ARRAY',
     played:    'NUMBER',
     duration:  'NUMBER',
-    frequency: 'NUMBER',
     completed: 'BOOLEAN',
     checked:   'OBJECT',
     sound:     'OBJECT'

@@ -42,17 +42,8 @@ angular.module('focus.controllers')
       }
     };
 
-    $scope.numberOfTimesPlayed = function(times) {
-      if(!times) {
-        return 0;
-      }
-      return times.reduce(function(time) {
-        return time.finished ? 1 : 0;
-      });
-    };
-
-    $scope.progressPercentage = function(times) {
-      return $scope.numberOfTimesPlayed(times) * 100 / times.length;
+    $scope.progressPercentage = function(program) {
+      return program.played * 100 / program.times.length;
     }
 
 
@@ -60,28 +51,25 @@ angular.module('focus.controllers')
       $scope.programs = result;
     });
 
-    $scope.addProgram = function(program) {
-        TrainingProgram.addProgram(program).then(function(result) {
-        console.log(result.insertId);
-        $scope.programs.push(program);
-      });
-    };
-
     $scope.playProgram = function(program) {
       AudioPlayer.setSound(program.sound.trackNumber);
       AudioPlayer.play();
-      $scope.showPlayer();
-    };
 
-    $scope.clearPrograms = function() {
-      TrainingProgram.clear();
-      $scope.programs = [];
+      if (program.played < program.times.length) {
+        program.played = program.played + 1;
+
+        if (program.played === program.times.length) {
+          program.finished = true;
+        }
+      }
+
+      TrainingProgram.updateProgram(program, program.id);
+      $scope.showPlayer();
     };
 
     $scope.editProgram = function() {
       $scope.selectedProgram.times = TrainingProgram.addTimes(
         $scope.selectedProgram.checked,
-        $scope.selectedProgram.frequency,
         $scope.selectedProgram.duration);
       $scope.master = angular.copy($scope.selectedProgram);
       TrainingProgram.updateProgram($scope.selectedProgram, $scope.selectedProgram.id);
