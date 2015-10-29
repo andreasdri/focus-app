@@ -12,7 +12,7 @@
       <h4>
         Treninger neste 7 dager
       </h4>
-      <div class="padding-top">
+      <div class="padding-top text-center">
         <div ng-repeat="exercise in program.times">
           <p>{{nextTraining(exercise)}}</p>
         </div>
@@ -21,11 +21,11 @@
              Senere treninger
           </a>
         </div>
-        <div ng-repeat="exercise in program.times" ng-if="showTrainingDates">
+        <div class="text-center" ng-repeat="exercise in program.times" ng-if="showTrainingDates">
           <p>{{futureTraining(exercise)}}</p>
         </div>
       </div>
-      <p class="padding-top">Antall ganger igjen: {{program.times.length-program.played}}</p>
+      <p class="text-center padding-top">Antall ganger igjen: {{program.times.length-program.played}}</p>
       <div class="button-bar padding-top">
         <button class="button button-small button-outline button-royal"
                 ng-click="showEditProgram(program, $event);">
