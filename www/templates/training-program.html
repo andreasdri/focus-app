@@ -2,7 +2,7 @@
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <div class="item item-text-wrap">
       <h3 class="padding-top">{{program.name}}</h3>
-      <a class="button button-category-info icon ion-ios-information" ng-click="toggleProgramInfo();">
+      <a class="button button-category-info icon-small ion-ios-information" ng-click="toggleProgramInfo();">
         Informasjon om programmet
       </a>
       <div ng-if="showProgramInfo">
@@ -10,14 +10,14 @@
       </div>
 
       <h4>
-        Neste 7 treninger
+        Treninger neste 7 dager
       </h4>
       <div class="padding-top">
         <div ng-repeat="exercise in program.times">
           <p>{{nextTraining(exercise)}}</p>
         </div>
-        <div class="padding">
-          <a class="button button-category-info" ng-click="toggleTrainingDates();">
+        <div>
+          <a class="button button-category-info icon-small" ng-class="showTrainingDates ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'" ng-click="toggleTrainingDates();">
              Senere treninger
           </a>
         </div>

@@ -50,7 +50,7 @@ angular.module('focus.controllers')
             sameDay: '[I dag]',
             nextDay: '[I morgen]',
             nextWeek: 'dddd',
-            sameElse: '[Neste ] dddd[,] D. MMM'
+            sameElse: '[neste ]dddd'
           });
         }
     };
@@ -58,7 +58,6 @@ angular.module('focus.controllers')
     $scope.futureTraining = function(exercise) {
       if (moment(exercise.time).isAfter(moment().add(7,'day'))) {
         return moment(exercise.time).calendar(null, {
-          nextWeek: 'dddd',
           sameElse: 'dddd D. MMM YYYY'
         });
       }
