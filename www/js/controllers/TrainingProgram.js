@@ -1,6 +1,6 @@
 angular.module('focus.controllers')
   .controller('TrainingProgramController', function($scope, $stateParams, TrainingProgram, AudioPlayer,
-    $ionicPopup, $state) {
+    $ionicPopup, $state, $ionicScrollDelegate) {
 
     /*TrainingProgram.getProgram($stateParams.program.id).then(function(result) {
       $scope.program = result[0];
@@ -14,6 +14,7 @@ angular.module('focus.controllers')
 
     $scope.toggleTrainingDates = function() {
       $scope.showTrainingDates = !$scope.showTrainingDates;
+      $ionicScrollDelegate.resize();
     };
 
     $scope.confirmDelete = function(program, evt) {
@@ -44,14 +45,21 @@ angular.module('focus.controllers')
 
     $scope.nextTraining = function(exercise) {
       if (moment(exercise.time) >= moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0})
-        && !exercise.finished) {
+        && !exercise.finished && moment(exercise.time).isBefore(moment().add(7,'day'))) {
+          return moment(exercise.time).calendar(null, {
+            sameDay: '[I dag]',
+            nextDay: '[I morgen]',
+            nextWeek: 'dddd',
+            sameElse: '[Neste ] dddd[,] D. MMM'
+          });
+        }
+    };
+
+    $scope.futureTraining = function(exercise) {
+      if (moment(exercise.time).isAfter(moment().add(7,'day'))) {
         return moment(exercise.time).calendar(null, {
-          sameDay: '[I dag]',
-          nextDay: '[I morgen]',
           nextWeek: 'dddd',
-          sameElse: '[Senere: ] dddd D. MMM YYYY',
-          lastDay: '[I går]',
-          lastWeek: '[Forrige uke] dddd'
+          sameElse: 'dddd D. MMM YYYY'
         });
       }
     };

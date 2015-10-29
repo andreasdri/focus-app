@@ -9,16 +9,24 @@
         <p class="padding">{{program.sound.description}}</p>
       </div>
 
-      <a class="button button-category-info icon ion-ios-calendar" ng-click="toggleTrainingDates();">
-        Planlagte treninger
-      </a>
-      <div class="padding" ng-if="showTrainingDates">
+      <h4>
+        Neste 7 treninger
+      </h4>
+      <div class="padding-top">
         <div ng-repeat="exercise in program.times">
           <p>{{nextTraining(exercise)}}</p>
         </div>
+        <div class="padding">
+          <a class="button button-category-info" ng-click="toggleTrainingDates();">
+             Senere treninger
+          </a>
+        </div>
+        <div ng-repeat="exercise in program.times" ng-if="showTrainingDates">
+          <p>{{futureTraining(exercise)}}</p>
+        </div>
       </div>
-      <p>Antall ganger igjen: {{program.times.length-program.played}}</p>
-      <div class="button-bar">
+      <p class="padding-top">Antall ganger igjen: {{program.times.length-program.played}}</p>
+      <div class="button-bar padding-top">
         <button class="button button-small button-outline button-royal"
                 ng-click="showEditProgram(program, $event);">
           <i class="icon-left ion-edit"></i> Endre
@@ -29,7 +37,7 @@
         </button>
         <button class="button button-small button-outline  button-royal"
                 ng-click="playProgram(program)">
-          <i class="icon-left ion-close"></i> Spill av
+          <i class="icon-left ion-play"></i> Spill av
         </button>
       </div>
     </div>
