@@ -19,9 +19,18 @@
       </div>
       <p>Antall ganger igjen: {{program.times.length-program.played}}</p>
       <div class="button-bar">
-        <button class="button button-outline icon-left ion-edit button-royal" ng-click="showEditProgram(program, $event);">Endre</button>
-        <button class="button button-outline icon-left ion-close-round button-royal" ng-click="confirmDelete(program, $event)">Slett</button>
-        <button class="button button-outline icon-left ion-play button-royal" ng-click="playProgram(program)">Spill av</button>
+        <button class="button button-small button-outline button-royal"
+                ng-click="showEditProgram(program, $event);">
+          <i class="icon-left ion-edit"></i> Endre
+        </button>
+        <button class="button button-small button-outline  button-royal"
+                ng-click="confirmDelete(program, $event)">
+          <i class="icon-left ion-close"></i> Slett
+        </button>
+        <button class="button button-small button-outline  button-royal"
+                ng-click="playProgram(program)">
+          <i class="icon-left ion-close"></i> Spill av
+        </button>
       </div>
     </div>
   </ion-content>
