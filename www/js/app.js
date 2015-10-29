@@ -70,6 +70,20 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
       }
     })
 
+    .state('main.mytraining.program', {
+      url: '/program',
+      cache: false,
+      views: {
+        'mainContent@main': {
+          templateUrl: 'templates/training-program.html',
+          controller: 'TrainingProgramController'
+        }
+      },
+      params: {
+        'program': null
+      }
+    })
+
     .state('main.motivation', {
       url : '/motivation',
       views: {

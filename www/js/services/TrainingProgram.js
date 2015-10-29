@@ -8,6 +8,11 @@ angular.module('focus.services')
       return programsRepository.get();
     },
 
+    getProgram: function(id) {
+      programsRepository.setBy({'id': id}).getOne;
+      return programsRepository.get();
+    },
+
     addProgram: function(program) {
       return programsRepository.add(program);
     },

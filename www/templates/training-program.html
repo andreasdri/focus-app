@@ -1,0 +1,45 @@
+<ion-view view-title="Treningsprogram">
+  <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
+    <div class="item item-text-wrap">
+      <h3 class="padding-top">{{program.name}}</h3>
+      <a class="button button-category-info icon-small ion-ios-information" ng-click="toggleProgramInfo();">
+        Informasjon om programmet
+      </a>
+      <div ng-if="showProgramInfo">
+        <p class="padding">{{program.sound.description}}</p>
+      </div>
+
+      <h4>
+        Treninger neste 7 dager
+      </h4>
+      <div class="padding-top text-center">
+        <div ng-repeat="exercise in program.times">
+          <p>{{nextTraining(exercise)}}</p>
+        </div>
+        <div>
+          <a class="button button-category-info icon-small" ng-class="showTrainingDates ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'" ng-click="toggleTrainingDates();">
+             Senere treninger
+          </a>
+        </div>
+        <div class="text-center" ng-repeat="exercise in program.times" ng-if="showTrainingDates">
+          <p>{{futureTraining(exercise)}}</p>
+        </div>
+      </div>
+      <p class="text-center padding-top">Antall ganger igjen: {{program.times.length-program.played}}</p>
+      <div class="button-bar padding-top">
+        <button class="button button-small button-outline button-royal"
+                ng-click="showEditProgram(program, $event);">
+          <i class="icon-left ion-edit"></i> Endre
+        </button>
+        <button class="button button-small button-outline  button-royal"
+                ng-click="confirmDelete(program, $event)">
+          <i class="icon-left ion-close"></i> Slett
+        </button>
+        <button class="button button-small button-outline  button-royal"
+                ng-click="playProgram(program)">
+          <i class="icon-left ion-play"></i> Spill av
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
