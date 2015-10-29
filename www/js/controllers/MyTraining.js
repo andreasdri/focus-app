@@ -78,6 +78,10 @@ angular.module('focus.controllers')
       $scope.master = angular.copy($scope.selectedProgram);
       TrainingProgram.updateProgram($scope.selectedProgram, $scope.selectedProgram.id);
       $scope.hideEditProgram();
+      if ($state.is('main.mytraining.program')) {
+        $state.go('main.mytraining.program', {program: $scope.selectedProgram});
+      }
+
     };
 
     $scope.confirmDelete = function(program, evt) {
