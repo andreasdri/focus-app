@@ -1,5 +1,6 @@
 angular.module('focus.controllers')
-  .controller('MainController', function($scope, $ionicModal, AudioPlayer, $rootScope, $ionicScrollDelegate) {
+  .controller('MainController', function($scope, $ionicModal, AudioPlayer, $rootScope, $ionicScrollDelegate,
+    TrainingProgram) {
     $scope.list = [
       {
         title: 'Min trening',
@@ -66,7 +67,6 @@ angular.module('focus.controllers')
     /* Edit Program Modal */
     $ionicModal.fromTemplateUrl('templates/edit-program.html', {
       scope: $scope,
-      controller: 'MyTrainingController',
       animation: 'slide-in-up'
     }).then(function(modal) {
       $scope.editProgramModal = modal;

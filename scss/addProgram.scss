@@ -51,3 +51,9 @@ body {
   @extend .button-library;
   float: none!important;
 }
+
+.button-category-info {
+  @extend .button-library;
+  float: none!important;
+  width: 100%;
+}

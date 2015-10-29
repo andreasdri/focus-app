@@ -2,14 +2,27 @@
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <div class="item item-text-wrap">
       <h3 class="padding-top">{{program.name}}</h3>
-      <p class="padding-top">{{program.sound.description}}</p>
-      <div ng-repeat="exercise in program.times">
-        <p>{{exercise.time}}</p>
+      <a class="button button-category-info icon ion-ios-information" ng-click="toggleProgramInfo();">
+        Informasjon om programmet
+      </a>
+      <div ng-if="showProgramInfo">
+        <p class="padding">{{program.sound.description}}</p>
       </div>
-      <p>Antall ganger igjen:</p>
-      <button class="button">Endre</button>
-      <button class="button">Slett</button>
-      <button class="button">Spill av</button>
+
+      <a class="button button-category-info icon ion-ios-calendar" ng-click="toggleTrainingDates();">
+        Planlagte treninger
+      </a>
+      <div class="padding" ng-if="showTrainingDates">
+        <div ng-repeat="exercise in program.times">
+          <p>{{nextTraining(exercise)}}</p>
+        </div>
+      </div>
+      <p>Antall ganger igjen: {{program.times.length-program.played}}</p>
+      <div class="button-bar">
+        <button class="button button-outline icon-left ion-edit button-royal" ng-click="showEditProgram(program, $event);">Endre</button>
+        <button class="button button-outline icon-left ion-close-round button-royal" ng-click="confirmDelete(program, $event)">Slett</button>
+        <button class="button button-outline icon-left ion-play button-royal" ng-click="playProgram(program)">Spill av</button>
+      </div>
     </div>
   </ion-content>
 </ion-view>
