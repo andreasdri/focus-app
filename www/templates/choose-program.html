@@ -13,55 +13,65 @@
     <div ng-if="showProgramInfo && (sound === selectedSound)">
       <p class="padding">{{sound.description}}</p>
     </div>
-    <div class="input-inline padding-bottom">
-      <label>Varighet (antall uker)</label>
-      <input maxlength="2" min="0" type="number" ng-model="selected.duration"
-        pattern="\d*">
-    </div>
-    <div>
-      <label>Varsel: På en dag</label>
-    </div>
-    <ul class="datepicker padding">
-      <li>
-        <label class="day-checkbox-mon">
-          <input type="checkbox" ng-model="selected.checked.mon">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-tue">
-          <input type="checkbox" ng-model="selected.checked.tue">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-wed">
-          <input type="checkbox" ng-model="selected.checked.wed">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-thu">
-          <input type="checkbox" ng-model="selected.checked.thu">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-fri">
-          <input type="checkbox" ng-model="selected.checked.fri">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-sat">
-          <input type="checkbox" ng-model="selected.checked.sat">
-        </label>
-      </li>
-      <li>
-        <label class="day-checkbox-sun">
-          <input type="checkbox" ng-model="selected.checked.sun">
-        </label>
-      </li>
-    </ul>
 
-    <button class="button button-royal button-outline button-medium" ng-click="addProgram(selected)">
-      Legg til program
-    </button>
+    <form novalidate name="form" role="form" ng-submit="addProgram(selected)">
+      <div class="input-inline padding-bottom">
+        <label>Varighet (antall uker)</label>
+        <input ng-maxlength="2" ng-minlength="1" min="1" type="number" ng-model="selected.duration"
+            name="Duration" pattern="\d*" required>
+      </div>
+      <div>
+        <label>Varsel: På en dag</label>
+      </div>
+      <ul class="datepicker padding">
+        <li>
+          <label class="day-checkbox-mon">
+            <input type="checkbox" ng-model="selected.checked.mon"
+              name="Mon" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-tue">
+            <input type="checkbox" ng-model="selected.checked.tue"
+              name="Tue" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-wed">
+            <input type="checkbox" ng-model="selected.checked.wed"
+            name="Wed" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-thu">
+            <input type="checkbox" ng-model="selected.checked.thu"
+            name="Thu" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-fri">
+            <input type="checkbox" ng-model="selected.checked.fri"
+            name="Fri" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-sat">
+            <input type="checkbox" ng-model="selected.checked.sat"
+            name="Sat" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+        <li>
+          <label class="day-checkbox-sun">
+            <input type="checkbox" ng-model="selected.checked.sun"
+            name="Sun" ng-required="checkboxSelected(selected.checked)">
+          </label>
+        </li>
+      </ul>
 
+      <button type="submit" class="button button-royal button-outline button-medium"
+        ng-disabled="form.$invalid">
+        Legg til program
+      </button>
+    </form>
   </div>
 </div>

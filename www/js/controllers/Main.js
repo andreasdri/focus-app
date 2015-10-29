@@ -35,6 +35,17 @@ angular.module('focus.controllers')
       }
     ];
 
+    $scope.checkboxSelected = function(checked) {
+      for (var key in checked) {
+        if (checked.hasOwnProperty(key)) {
+          if (checked[key]) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
     $scope.resize = function() {
       $ionicScrollDelegate.resize();
     };
