@@ -2,14 +2,14 @@
   <ion-content padding="true" class="tabs-content has-header" ng-class="{'has-footer': $root.mediaPlaying}">
     <img id="iMaxLogo" src="img/iMaxLogo.png">
 
-    <div class="optionsList">
+    <div class="list">
 
       <div class="item item-divider">
         <h3>Språk</h3>
       </div>
 
       <label class="item item-radio">
-        <input type="radio" name="language" checked>
+        <input type="radio" name="language" checked="checked" value="norwegian">
 
         <div class="item-content">
           Norsk
@@ -18,7 +18,7 @@
       </label>
 
       <label class="item item-radio">
-        <input type="radio" name="language">
+        <input type="radio" name="language" value="english">
 
         <div class="item-content">
           English
@@ -32,38 +32,24 @@
         <h3>Informasjon</h3>
       </div>
 
-      <label class="item item-radio" ui-sref="main.options.about">
-        <input type="radio" name="information">
-
+      <div class="item" ui-sref="main.options.about">
         <div class="item-content">
           iMax:Focus
         </div>
-      </label>
+      </div>
 
-      <label class="item item-radio" ui-sref="main.options.olympiatoppen">
-        <input type="radio" name="information">
-
+      <div class="item" ui-sref="main.options.olympiatoppen">
         <div class="item-content">
           Olympiatoppen
         </div>
-      </label>
-
-      <label class="item item-radio" ui-sref="main.options.copyright">
-        <input type="radio" name="information">
-
-        <div class="item-content">
-          Copyright
-        </div>
-      </label>
-
-      <br>
-
-      <div class="video-container">
-        <iframe src="http://www.youtube.com/embed/Az_mt-kDna4" frameborder="0" width="560" height="315"></iframe>
       </div>
 
+      <div class="item padding-bottom" ui-sref="main.options.copyright">
+        <div class="item-content">
+          Lisenser
+        </div>
+      </div>
     </div>
-
   </ion-content>
   <ion-footer-bar class="bar-stable"
                   ng-class="{ 'bar-subfooter': platform.isIOS() }">
