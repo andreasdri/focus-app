@@ -19,9 +19,15 @@
         <label>Varighet (antall uker)</label>
         <input ng-maxlength="2" ng-minlength="1" min="1" type="number" ng-model="selected.duration"
             name="Duration" pattern="\d*" required>
+        <span ng-style="{ 'color' : (form.Duration.$valid) ? 'green' : 'red' }">
+          <i class="icon ion-ios-medical"></i>
+        </span>
       </div>
       <div>
         <label>Varsel: På en dag</label>
+        <span ng-style="{ 'color' : checkboxSelected(selected.checked) ? 'red' : 'green' }">
+          <i class="icon ion-ios-medical"></i>
+        </span>
       </div>
       <ul class="datepicker padding">
         <li>
