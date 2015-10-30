@@ -1,4 +1,23 @@
-
+.item-content {
+  font-size: 12px;
+  display: inline-block;
+  float: left;
+}
+.button-options {
+  border: none!important;
+  padding: 0px;
+  background-color: transparent;
+  margin: 10px 5px!important;
+  float: right;
+  // min-width: 16px!important;
+  // min-height: 16px!important;
+  // height: 34!important
+  font-size: 25px;
+  color: $royal;
+}
+.buttons {
+  height: 32px;
+}
 #iMaxLogo {
   display: block;
   margin: auto;
@@ -10,8 +29,7 @@
 #olympiatoppenLogo {
   display: block;
   margin: auto;
-  max-width: 70%;
-  max-height: 100%;
+  width: 181px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -19,9 +37,4 @@
   display: inline;
   margin: auto;
 }
-.item h3 {
-  font-size: 18px;
-}
-.item-content {
-  font-size: 12px;
-}
+
