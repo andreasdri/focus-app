@@ -8,9 +8,9 @@
         <div class="sound-title">
           {{sound.title}}
         </div>
-        <div class="buttons">
-          <a class="button button-library icon ion-ios-play" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();"></a>
-          <a class="button button-library icon ion-ios-plus" ng-click="addProgram($event, sound)"></a>
+        <div class="buttons buttons-library-icon">
+          <a class="button button-library-icon icon ion-ios-play" ng-click="setSound({{sound.trackNumber}});play();$event.stopPropagation();"></a>
+          <a class="button button-library-icon icon ion-ios-plus" ng-click="addProgram($event, sound)"></a>
         </div>
       </ion-item>
     </ion-list>

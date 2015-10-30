@@ -48,8 +48,10 @@ body {
 }
 
 .button-category-info {
-  @extend .button-library;
+  border: none;
+  background-color: #fff;
   float: none!important;
   width: 100%;
   font-size: 14px;
+  color: $royal;
 }
