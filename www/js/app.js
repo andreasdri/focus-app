@@ -155,7 +155,7 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
     .setRepository('newPrograms', programsRepository)
 })
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, AudioLibrary) {
   $ionicPlatform.ready(function() {
 
     moment.locale('nb');
@@ -166,6 +166,21 @@ angular.module('focus', ['ionic', 'ngCordova', 'ngDatabase', 'ngIOS9UIWebViewPat
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
+    }
+
+    if (window.store) {
+      store.verbosity = store.DEBUG;
+
+      var sounds = AudioLibrary.getAllSounds();
+
+      sounds.map(function(sound) {
+        // Register all the sound tracks in the store
+        store.register({
+          id: sound.trackNumber,
+          alias: sound.title, //todo: dont use title as alias?
+          type: store.NON_CONSUMABLE
+        });
+      });
     }
   });
 })
