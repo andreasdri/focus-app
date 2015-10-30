@@ -2,12 +2,12 @@
   font-style: italic;
   text-align: center;
   padding-bottom: 40px;
-  padding-right: 160px;
+  padding-right: 130px;
 }
 
 @media screen and (max-width: 480px) {
   .motivationAthlete{
-    padding-left: 44px;
+    padding-left: 69px;
     padding-right: 0px;
     text-align: left;
   }
@@ -15,7 +15,7 @@
 
 .motivationImg {
   display: block;
-  width: 300px;
+  width: 250px;
   margin: auto;
 }
 
@@ -27,6 +27,6 @@
 .motivationSubText {
   font-style: italic;
   text-align: center;
-  width: 300px;
+  width: 250px;
   margin:0 auto;
 }
