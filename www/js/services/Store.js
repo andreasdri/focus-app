@@ -14,8 +14,6 @@ angular.module('focus.services')
           return;
         }
 
-        forEach(AudioLibrary.getAllSounds())
-
         var platform = device.platform.toLowerCase();
         document.getElementsByTagName('body')[0].className = platform;
 
