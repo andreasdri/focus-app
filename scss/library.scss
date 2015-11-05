@@ -1,12 +1,21 @@
-.button-library {
+.button-library-icon {
   border: none!important;
   padding: 0px;
   background-color: transparent;
-  margin: 0px 5px!important;
-  float: right;
+  margin: 0px!important;
+  //float: right;
   min-width: 16px!important;
   min-height: 16px!important;
   color: $royal;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.buttons-library-icon {
+  right: 4px!important;
 }
 .sound-title {
   display: inline-block;
