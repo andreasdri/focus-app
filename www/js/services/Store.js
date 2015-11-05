@@ -21,7 +21,7 @@ angular.module('focus.services')
         //store.verbosity = store.DEBUG;
 
         // Enable remote receipt validation
-        store.validator = "https://api.fovea.cc:1982/check-purchase";
+        //store.validator = "https://api.fovea.cc:1982/check-purchase";
 
         console.log('Register Products');
 
