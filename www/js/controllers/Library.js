@@ -24,8 +24,9 @@ angular.module('focus.controllers')
       return Store.trackOwned(trackID);
     };
 
-    $scope.purchaseTrack = function () {
+    $scope.purchaseTrack = function (trackID) {
+      console.log(trackID)
 
-      Store.purchaseTrack("basic2");
+      Store.purchaseTrack(trackID);
     };
   });

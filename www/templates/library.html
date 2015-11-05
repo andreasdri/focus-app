@@ -13,6 +13,14 @@
           <a class="button button-library-icon icon ion-ios-plus" ng-click="addProgram($event, sound)"></a>
         </div>
       </ion-item>
+
+      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ng-click="viewDetails(sound)" ng-if="!(checkTrack(sound.id))">
+        {{sound.title}}
+        <button class="button button-positive" ng-click="purchaseTrack(sound.id);$event.stopPropagation();">
+          <i class="icon ion-ios-play"></i>
+        </button>
+      </ion-item>
+
     </ion-list>
     </div>
       <h3>Tilgjengelige lydspor</h3>

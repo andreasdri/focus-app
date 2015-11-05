@@ -18,7 +18,7 @@ angular.module('focus.services')
         document.getElementsByTagName('body')[0].className = platform;
 
         // Enable maximum logging level
-        store.verbosity = store.DEBUG;
+        //store.verbosity = store.DEBUG;
 
         // Enable remote receipt validation
         store.validator = "https://api.fovea.cc:1982/check-purchase";
@@ -36,10 +36,16 @@ angular.module('focus.services')
             type: store.NON_CONSUMABLE
           });
 
+          store.when(sound.id).approved(function(product) {
+
+            console.log("purchased!")
+            product.finish();
+
+          });
+
+
 
         });
-
-
 
         store.refresh();
 
@@ -61,15 +67,6 @@ angular.module('focus.services')
         console.log("Purchasing track", trackID);
 
         store.order(p).then(console.log(trackID, "ordered"));
-
-        store.once(trackID).approved(function(product) {
-
-          console.log("purchased!")
-          product.finish();
-
-        });
-
-        store.refresh();
 
       }
 
