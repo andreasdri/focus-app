@@ -1,7 +1,7 @@
 angular.module('focus.controllers')
   .controller('AddProgramController', function($scope, $ionicSlideBoxDelegate,
       SoundCategory, AudioLibrary, $stateParams, soundsByCategoryFilter,
-      $timeout, TrainingProgram, $state, $ionicPopup, $ionicHistory) {
+      $timeout, TrainingProgram, $state, $ionicPopup, $ionicHistory, $location, $ionicScrollDelegate) {
 
     var getCategory = function(cat) {
       for(var i = 0; i < $scope.categories.length; i++) {
@@ -27,19 +27,30 @@ angular.module('focus.controllers')
     $scope.addFromLibrary = $stateParams.addFromLibrary || false;
 
     $scope.toggleActiveCategory = function(category) {
+      if ($scope.showCategoryInfo === true) {
+        $scope.toggleCategoryInfo();
+      }
       $scope.selectedCategory = category;
       $scope.sounds = soundsByCategoryFilter(allSounds, $scope.selectedCategory);
+      $location.hash(category.id);
+      $ionicScrollDelegate.anchorScroll(true);
     };
 
     $scope.toggleActiveSound = function(sound) {
+      if ($scope.showProgramInfo === true) {
+        $scope.toggleProgramInfo();
+      }
       if ($scope.selectedSound !== null && sound === $scope.selectedSound) {
         $scope.selectedSound = null;
       } else {
         $scope.selectedSound = sound;
+        $location.hash(sound.trackNumber);
+        $ionicScrollDelegate.anchorScroll(true);
       }
     };
 
     $scope.nextSlide = function() {
+      $location.hash('top');
       $ionicSlideBoxDelegate.$getByHandle('program').next();
     };
 
