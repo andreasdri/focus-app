@@ -26,6 +26,13 @@ angular.module('focus.controllers')
     $scope.showProgramInfo = false;
     $scope.addFromLibrary = $stateParams.addFromLibrary || false;
 
+    if ($stateParams.addFromLibrary) {
+      $timeout(function() {
+        $location.hash($stateParams.selectedSound.trackNumber);
+        $ionicScrollDelegate.anchorScroll(true);
+      },1000);
+    }
+
     $scope.toggleActiveCategory = function(category) {
       if ($scope.showCategoryInfo === true) {
         $scope.toggleCategoryInfo();
