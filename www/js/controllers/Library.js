@@ -20,13 +20,13 @@ angular.module('focus.controllers')
       );
     }
 
-    $scope.checkTrack = function(trackID) {
-      return Store.trackOwned(trackID);
-    };
+    // $scope.checkTrack = function(trackID) {
+    //   return Store.trackOwned(trackID);
+    // };
 
-    $scope.purchaseTrack = function (trackID) {
-      console.log(trackID)
+    // $scope.purchaseTrack = function (trackID) {
+    //   console.log(trackID)
 
-      Store.purchaseTrack(trackID);
-    };
+    //   Store.purchaseTrack(trackID);
+    // };
   });

@@ -4,7 +4,7 @@
       <h3>Dine lydspor</h3>
     </div>
     <ion-list>
-      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ng-click="viewDetails(sound) "ng-if="(checkTrack(sound.id))">
+      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ng-click="viewDetails(sound) ">
         <div class="sound-title">
           {{sound.title}}
         </div>
@@ -13,16 +13,6 @@
           <a class="button button-library-icon icon ion-ios-plus" ng-click="addProgram($event, sound)"></a>
         </div>
       </ion-item>
-
-      <ion-item ng-repeat="sound in sounds" class="item-chapter item-button-right" ng-click="viewDetails(sound) "ng-if="!(checkTrack(sound.id))">
-      <div class="sound-title">
-        {{sound.title}}
-      </div>
-      <div class="buttons">
-        <a class="button button-library icon ion-ios-play" ng-click="purchaseTrack(sound.id);$event.stopPropagation();"></a>
-      </div>
-      </ion-item>
-
     </ion-list>
     </div>
       <h3>Tilgjengelige lydspor</h3>
