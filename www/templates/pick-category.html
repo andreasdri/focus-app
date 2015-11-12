@@ -1,6 +1,7 @@
 <h3 class="category-heading">Hva vil du trene på?</h3>
 
 <div ng-repeat="category in categories">
+  <a id="{{category.id}}"></a>
   <button class="button button-category button-stable"
           ng-class="{ 'selected': category === selectedCategory }"
           ng-click="toggleActiveCategory(category)">
