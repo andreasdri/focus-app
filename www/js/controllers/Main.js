@@ -1,6 +1,6 @@
 angular.module('focus.controllers')
   .controller('MainController', function($scope, $ionicModal, AudioPlayer, $rootScope, $ionicScrollDelegate,
-    TrainingProgram) {
+    TrainingProgram, Store) {
     $scope.list = [
       {
         title: 'Min trening',
@@ -103,6 +103,7 @@ angular.module('focus.controllers')
       $scope.playerModal.remove();
       $scope.editProgramModal.remove();
     });
+    //document.addEventListener('deviceready', Store.initStore, false);
 
   });
 
