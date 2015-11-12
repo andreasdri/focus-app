@@ -55,7 +55,8 @@ angular.module('focus.controllers')
       $scope.programs = result;
     });
 
-    $scope.playProgram = function(program) {
+    $scope.playProgram = function(program, evt) {
+      evt.stopPropagation(); evt.preventDefault();
       AudioPlayer.setSound(program.sound.trackNumber);
       AudioPlayer.play();
 
