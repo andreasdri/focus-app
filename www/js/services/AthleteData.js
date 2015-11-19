@@ -46,7 +46,7 @@ angular.module('focus.services')
       // },
       {
         name: "- Marit Breivik",
-        img: "/img/athletes/MaritBreivik.jpg",
+        img: "/img/athletes/MaritBreivik-01.png",
         subtext: "Hovedcoach Lagspillidretter / Landslagstrener 1994-2009, med 13 mesterskapsmedaljer (EM, VM, OL)",
         quote: "Topp prestasjon handler om å være i 'nuet'! Til stede, på trening og i konkurranse, her og nå! Nøkkelen til dette? Oppmerksomhetsprogrammene i iMax:Focus gir deg god veiledning i å øke tilstedeværelsen din både i hverdagen og på trening!"
       }
