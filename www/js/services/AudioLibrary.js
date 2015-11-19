@@ -6,7 +6,7 @@ angular.module('focus.services')
         id: "basic1",
         title: 'Det er viktig å slappe av',
         trackNumber: 1,
-        description: 'Slappe av er viktig i hverdagen.'
+        description: 'Slappe av er viktig i hverdagen.',
         type: 'basic',
         category: 'avslapping'
       }
